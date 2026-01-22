@@ -122,7 +122,7 @@ Transactions
 ## 🎨 Design Elements
 
 ### Global Anchors (Quick Access Bar)
-- 🔍 **Explorer** → https://scan.paxeer.app
+- 🔍 **Explorer** → https://paxscan.paxeer.app
 - 🔄 **Sidiora Exchange** → https://sidiora.exchange
 - 🔄 **Sidiora Swap** → https://swap.sidiora.exchange
 - 📊 **White Paper** → https://status.paxeer.app

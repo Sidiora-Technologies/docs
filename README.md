@@ -160,12 +160,12 @@ Based on [Optimism's Professional Documentation](https://docs.optimism.io):
 ## 🔧 Technical Specifications
 
 ### Network Details
-- **Chain ID:** 229
+- **Chain ID:** 125
 - **Currency:** PAX (Paxeer)
 - **Block Time:** ~2 seconds
 - **Gas Limit:** 30,000,000
 - **RPC URL:** https://public-rpc.paxeer.app/rpc
-- **Explorer:** https://scan.paxeer.app
+- **Explorer:** https://paxscan.paxeer.app
 
 ### Ecosystem
 - **PaxDex:** DEX with 0.3% fees, 12 tokens, WebSocket support
@@ -283,7 +283,7 @@ Add your analytics IDs in `docs.json`:
 ## 🔗 Important Links
 
 - **Website:** https://paxeer.app
-- **Explorer:** https://scan.paxeer.app
+- **Explorer:** https://paxscan.paxeer.app
 - **RPC:** https://public-rpc.paxeer.app/rpc
 - **Discord:** https://discord.gg/paxeer
 - **GitHub:** https://github.com/paxeer

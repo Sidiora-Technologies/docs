@@ -28,9 +28,9 @@ Add Paxeer Network to your MetaMask with these settings:
     |-------|-------|
     | Network Name | Paxeer Network |
     | RPC URL | `https://public-rpc.paxeer.app/rpc` |
-    | Chain ID | `229` |
+    | Chain ID | `125` |
     | Currency Symbol | PAX |
-    | Block Explorer | `https://scan.paxeer.app` |
+    | Block Explorer | `https://paxscan.paxeer.app` |
   </Accordion>
   
   <Accordion title="One-Click Add">
@@ -50,9 +50,9 @@ Add Paxeer Network to your MetaMask with these settings:
 {
   "networkName": "Paxeer Network",
   "rpcUrl": "https://public-rpc.paxeer.app/rpc",
-  "chainId": 229,
+  "chainId": 125,
   "currencySymbol": "PAX",
-  "blockExplorer": "https://scan.paxeer.app"
+  "blockExplorer": "https://paxscan.paxeer.app"
 }
 ```
 
@@ -65,7 +65,7 @@ import { createConfig, http } from 'wagmi'
 import { defineChain } from 'viem'
 
 const paxeer = defineChain({
-  id: 229,
+  id: 125,
   name: 'Paxeer Network',
   network: 'paxeer',
   nativeCurrency: {
@@ -81,7 +81,7 @@ const paxeer = defineChain({
   blockExplorers: {
     default: {
       name: 'PaxeerScan',
-      url: 'https://scan.paxeer.app',
+      url: 'https://paxscan.paxeer.app',
     },
   },
 })

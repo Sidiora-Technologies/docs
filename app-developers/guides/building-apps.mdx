@@ -9,7 +9,7 @@ icon: "hammer"
 This guide explains the basics of Paxeer Network development. Paxeer Network is [EVM equivalent](https://web.archive.org/web/20231127160757/https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), meaning it runs the same EVM as Ethereum. Therefore, the differences between Paxeer development and Ethereum development are minimal.
 
 <Info>
-Paxeer Network Chain ID: **229**
+Paxeer Network Chain ID: **125**
 </Info>
 
 ## Paxeer Network Endpoints
@@ -25,10 +25,10 @@ https://public-rpc.paxeer.app/rpc
 | Parameter | Value |
 |-----------|-------|
 | Network Name | Paxeer Network |
-| Chain ID | 229 |
+| Chain ID | 125 |
 | Currency | PAX |
 | RPC URL | https://public-rpc.paxeer.app/rpc |
-| Block Explorer | https://scan.paxeer.app |
+| Block Explorer | https://paxscan.paxeer.app |
 
 ## Development Workflow
 
@@ -54,7 +54,7 @@ https://public-rpc.paxeer.app/rpc
           networks: {
             paxeer: {
               url: "https://public-rpc.paxeer.app/rpc",
-              chainId: 229,
+              chainId: 125,
               accounts: [process.env.PRIVATE_KEY],
             },
           },
@@ -140,7 +140,7 @@ https://public-rpc.paxeer.app/rpc
     # Foundry
     forge verify-contract DEPLOYED_ADDRESS \
       src/MyContract.sol:MyContract \
-      --chain-id 229 \
+      --chain-id 125 \
       --watch
     ```
   </Step>
@@ -730,7 +730,7 @@ export default function Home() {
   <Card
     title="Block Explorer"
     icon="magnifying-glass"
-    href="https://scan.paxeer.app"
+    href="https://paxscan.paxeer.app"
   >
     Verify contracts and track transactions
   </Card>
@@ -744,7 +744,7 @@ export default function Home() {
   <Card
     title="Gas Tracker"
     icon="gas-pump"
-    href="https://scan.paxeer.app/gas-tracker"
+    href="https://paxscan.paxeer.app/gas-tracker"
   >
     Monitor current gas prices
   </Card>

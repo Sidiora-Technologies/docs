@@ -12,13 +12,13 @@ Configure Paxeer Network in your applications using wagmi, viem, ethers.js, or w
 
 | Parameter | Value |
 |-----------|-------|
-| Chain ID | `229` |
+| Chain ID | `125` |
 | Network Name | Paxeer Network |
 | Native Currency | PAX (Paxeer) |
 | Decimals | 18 |
 | RPC Endpoint | `https://public-rpc.paxeer.app/rpc` |
-| Block Explorer | `https://scan.paxeer.app` |
-| Explorer API | `https://scan.paxeer.app/api` |
+| Block Explorer | `https://paxscan.paxeer.app` |
+| Explorer API | `https://paxscan.paxeer.app/api` |
 
 ## Configuration by Library
 
@@ -33,7 +33,7 @@ Configure Paxeer Network in your applications using wagmi, viem, ethers.js, or w
     import { defineChain } from 'viem'
 
     export const paxeer = defineChain({
-      id: 229,
+      id: 125,
       name: 'Paxeer Network',
       network: 'paxeer',
       nativeCurrency: {
@@ -52,8 +52,8 @@ Configure Paxeer Network in your applications using wagmi, viem, ethers.js, or w
       blockExplorers: {
         default: {
           name: 'PaxeerScan',
-          url: 'https://scan.paxeer.app',
-          apiUrl: 'https://scan.paxeer.app/api',
+          url: 'https://paxscan.paxeer.app',
+          apiUrl: 'https://paxscan.paxeer.app/api',
         },
       },
     })
@@ -100,7 +100,7 @@ Configure Paxeer Network in your applications using wagmi, viem, ethers.js, or w
     import { createPublicClient, http, defineChain } from 'viem'
 
     export const paxeer = defineChain({
-      id: 229,
+      id: 125,
       name: 'Paxeer Network',
       network: 'paxeer',
       nativeCurrency: {
@@ -116,7 +116,7 @@ Configure Paxeer Network in your applications using wagmi, viem, ethers.js, or w
       blockExplorers: {
         default: {
           name: 'PaxeerScan',
-          url: 'https://scan.paxeer.app',
+          url: 'https://paxscan.paxeer.app',
         },
       },
     })
@@ -163,7 +163,7 @@ Configure Paxeer Network in your applications using wagmi, viem, ethers.js, or w
     import { ethers } from 'ethers'
 
     const paxeerNetwork = {
-      chainId: 229,
+      chainId: 125,
       name: 'Paxeer Network',
     }
 
@@ -234,7 +234,7 @@ Configure Paxeer Network in your applications using wagmi, viem, ethers.js, or w
 
     // Get network ID
     const networkId = await web3.eth.net.getId()
-    console.log('Network ID:', networkId) // 229
+    console.log('Network ID:', networkId) // 125
 
     // Get current block number
     const blockNumber = await web3.eth.getBlockNumber()
@@ -275,7 +275,7 @@ async function addPaxeerNetwork() {
       method: 'wallet_addEthereumChain',
       params: [
         {
-          chainId: '0xe5', // 229 in hex
+          chainId: '0xe5', // 125 in hex
           chainName: 'Paxeer Network',
           nativeCurrency: {
             name: 'Paxeer',
@@ -283,7 +283,7 @@ async function addPaxeerNetwork() {
             decimals: 18,
           },
           rpcUrls: ['https://public-rpc.paxeer.app/rpc'],
-          blockExplorerUrls: ['https://scan.paxeer.app'],
+          blockExplorerUrls: ['https://paxscan.paxeer.app'],
         },
       ],
     });
@@ -301,8 +301,8 @@ Store your configuration in environment variables:
 ```bash .env
 # Paxeer Network Configuration
 PAXEER_RPC_URL=https://public-rpc.paxeer.app/rpc
-PAXEER_CHAIN_ID=229
-PAXEER_EXPLORER=https://scan.paxeer.app
+PAXEER_CHAIN_ID=125
+PAXEER_EXPLORER=https://paxscan.paxeer.app
 
 # Your private key (NEVER commit this!)
 PRIVATE_KEY=your_private_key_here
@@ -334,10 +334,10 @@ module.exports = {
     customChains: [
       {
         network: "paxeer",
-        chainId: 229,
+        chainId: 125,
         urls: {
-          apiURL: "https://scan.paxeer.app/api",
-          browserURL: "https://scan.paxeer.app",
+          apiURL: "https://paxscan.paxeer.app/api",
+          browserURL: "https://paxscan.paxeer.app",
         },
       },
     ],
@@ -358,7 +358,7 @@ solc_version = "0.8.20"
 paxeer = "https://public-rpc.paxeer.app/rpc"
 
 [etherscan]
-paxeer = { key = "${ETHERSCAN_API_KEY}", url = "https://scan.paxeer.app/api" }
+paxeer = { key = "${ETHERSCAN_API_KEY}", url = "https://paxscan.paxeer.app/api" }
 ```
 
 ## Testing Connection

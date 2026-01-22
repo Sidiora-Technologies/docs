@@ -36,7 +36,7 @@ Deploy and interact with smart contracts on Paxeer Network. Fully EVM-compatible
       networks: {
         paxeer: {
           url: "https://public-rpc.paxeer.app/rpc",
-          chainId: 229,
+          chainId: 125,
           accounts: [process.env.PRIVATE_KEY]
         }
       },
@@ -47,10 +47,10 @@ Deploy and interact with smart contracts on Paxeer Network. Fully EVM-compatible
         customChains: [
           {
             network: "paxeer",
-            chainId: 229,
+            chainId: 125,
             urls: {
-              apiURL: "https://scan.paxeer.app/api",
-              browserURL: "https://scan.paxeer.app"
+              apiURL: "https://paxscan.paxeer.app/api",
+              browserURL: "https://paxscan.paxeer.app"
             }
           }
         ]
@@ -94,7 +94,7 @@ Deploy and interact with smart contracts on Paxeer Network. Fully EVM-compatible
     forge create src/MyContract.sol:MyContract \
       --rpc-url https://public-rpc.paxeer.app/rpc \
       --private-key $PRIVATE_KEY \
-      --chain-id 229
+      --chain-id 125
     ```
 
     <Tip>
@@ -121,7 +121,7 @@ Deploy and interact with smart contracts on Paxeer Network. Fully EVM-compatible
       </Step>
 
       <Step title="Connect MetaMask">
-        Connect MetaMask to Paxeer Network (Chain ID: 229)
+        Connect MetaMask to Paxeer Network (Chain ID: 125)
       </Step>
 
       <Step title="Select Environment">
@@ -188,7 +188,7 @@ contract MyToken is ERC20 {
     forge create src/MyToken.sol:MyToken \
       --rpc-url https://public-rpc.paxeer.app/rpc \
       --private-key $PRIVATE_KEY \
-      --chain-id 229
+      --chain-id 125
     ```
   </Tab>
 </Tabs>
@@ -207,7 +207,7 @@ npx hardhat verify --network paxeer DEPLOYED_CONTRACT_ADDRESS
 
 ```bash
 forge verify-contract \
-  --chain-id 229 \
+  --chain-id 125 \
   --compiler-version v0.8.20 \
   DEPLOYED_CONTRACT_ADDRESS \
   src/MyToken.sol:MyToken \
@@ -298,9 +298,9 @@ function transfer() {
 |-----------|-------|
 | Network Name | Paxeer Network |
 | RPC URL | `https://public-rpc.paxeer.app/rpc` |
-| Chain ID | `229` |
+| Chain ID | `125` |
 | Currency | PAX |
-| Block Explorer | `https://scan.paxeer.app` |
+| Block Explorer | `https://paxscan.paxeer.app` |
 
 ## Next Steps
 

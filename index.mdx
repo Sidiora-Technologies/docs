@@ -4,12 +4,12 @@ description: "Build on a high-performance, developer-friendly blockchain platfor
 ---
 
 <Note>
-**Chain ID:** 229 | **Currency:** PAX | **Version:** v1.0.0
+**Chain ID:** 125 | **Cosmos Chain ID:** hyperpax_125-1 | **Currency:** PAX | **Binary:** hyperpaxd
 </Note>
 
-## Welcome to Paxeer Network
+## Welcome to HyperPaxeer Network
 
-A high-performance, developer-friendly blockchain platform for the next generation of decentralized applications. Paxeer Network is fully EVM-compatible, making it easy to deploy your existing Ethereum smart contracts and dApps.
+HyperPaxeer Network is a capital orchestration network built as part of the Alexandria Fork upgrade, migrating validators from the original Paxeer Network (chain ID 125) to a new high-throughput Proof-of-Stake EVM blockchain (chain ID 125). Built on Cosmos SDK and CometBFT, it's fully EVM-compatible.
 
 <CardGroup cols={2}>
   <Card
@@ -114,15 +114,18 @@ Paxeer Network is built on our own native infrastructure, designed for independe
 
 ## Network Details
 
-Connect to Paxeer Network with these details:
+Connect to HyperPaxeer Network with these details:
 
 ```json Network Configuration
 {
-  "networkName": "Paxeer Network",
-  "rpcUrl": "https://public-rpc.paxeer.app/rpc",
-  "chainId": 229,
+  "networkName": "HyperPaxeer Network",
+  "rpcUrl": "https://mainnet-beta.rpc.hyperpaxeer.com/rpc",
+  "chainId": 125,
+  "cosmosChainId": "hyperpax_125-1",
   "currencySymbol": "PAX",
-  "blockExplorer": "https://scan.paxeer.app"
+  "baseDenom": "ahpx",
+  "bech32Prefix": "pax",
+  "blockExplorer": "https://paxscan.paxeer.app"
 }
 ```
 

@@ -213,7 +213,7 @@ Contract execution failed due to:
     View detailed error messages on PaxeerScan:
     
     ```
-    https://scan.paxeer.app/tx/0x...
+    https://paxscan.paxeer.app/tx/0x...
     ```
   </Step>
 </Steps>
@@ -416,7 +416,7 @@ const simulation = await fetch('https://api.tenderly.co/api/v1/account/me/projec
     'X-Access-Key': 'YOUR_KEY',
   },
   body: JSON.stringify({
-    network_id: '229',
+    network_id: '125',
     from: fromAddress,
     to: toAddress,
     input: data,
@@ -432,7 +432,7 @@ console.log('Simulation result:', result);
 
 Check transaction details and error messages:
 
-1. Go to [https://scan.paxeer.app](https://scan.paxeer.app)
+1. Go to [https://paxscan.paxeer.app](https://paxscan.paxeer.app)
 2. Search for your transaction hash
 3. View execution trace and error messages
 4. Check event logs for clues
@@ -470,7 +470,7 @@ Before sending transactions:
   <Card
     title="Block Explorer"
     icon="magnifying-glass"
-    href="https://scan.paxeer.app"
+    href="https://paxscan.paxeer.app"
   >
     Investigate transactions
   </Card>

@@ -1,0 +1,155 @@
+---
+title: "Versioning"
+description: "How Paxeer Network names and versions its forks, protocol releases, and binary builds"
+icon: "code-branch"
+---
+
+## Naming Hierarchy
+
+Paxeer Network uses a four-layer naming scheme. Each layer changes at a different cadence and carries a distinct naming convention.
+
+```
+┌─────────────────────────────────────────────────┐
+│              PAXEER NETWORK                      │
+│              The chain. The ecosystem.           │
+│                                                  │
+│  ┌───────────────────────────────────────────┐   │
+│  │  Fork: ALEXANDRIA                         │   │
+│  │  Consensus era. Cryptographic protocol.   │   │
+│  │                                           │   │
+│  │  ┌───────────────────────────────────┐    │   │
+│  │  │  Version: HYPERPAXEER             │    │   │
+│  │  │  Features. Precompiles. Modules.  │    │   │
+│  │  │                                   │    │   │
+│  │  │  ┌───────────────────────────┐    │    │   │
+│  │  │  │  Binary: HYPERPAX-OS      │    │    │   │
+│  │  │  │         CRONOS            │    │    │   │
+│  │  │  │  VM. Validator software.  │    │    │   │
+│  │  │  └───────────────────────────┘    │    │   │
+│  │  └───────────────────────────────────┘    │   │
+│  └───────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────┘
+```
+
+---
+
+## Layer 0 — Paxeer Network
+
+The chain, the token (PAX), the community. This is the permanent identity that never changes regardless of forks, versions, or binary releases. Everything else is a version *of* Paxeer Network.
+
+---
+
+## Layer 1 — Fork (Protocol Era)
+
+Forks are rare, landmark events that change the fundamental cryptographic or consensus protocol of the chain — a shift in consensus mechanism, new signature schemes, a core re-architecture. Each fork defines an **era**.
+
+**Naming convention:** Ancient seats of knowledge and civilisation.
+
+| Fork | Status | What Changed |
+|------|--------|-------------|
+| **Alexandria** | Active | Migration to Proof-of-Stake EVM, CometBFT consensus, dual-VM architecture (EVM OS + Argus VM) |
+
+Future fork names follow the same theme: Persepolis, Carthage, Byzantium, Petra, Thebes.
+
+**Format:** `Alexandria Fork` or just `Alexandria`
+**In config:** `fork: alexandria`
+
+<Note>
+A fork changes the rules of the chain itself. Think of it as a constitutional amendment — everything built on top must adapt.
+</Note>
+
+---
+
+## Layer 2 — Network Version (Feature Release)
+
+Network versions are periodic protocol upgrades that add new capabilities — custom precompiles, Cosmos SDK modules, on-chain features, governance parameters. They happen within a fork era and do not change the underlying consensus or cryptographic primitives.
+
+**Naming convention:** `Hyper` prefix + evocative compound noun.
+
+| Version | Status | What Changed |
+|---------|--------|-------------|
+| **HyperPaxeer** | Active | Initial Alexandria-era release — EVM OS, Argus VM integration, x/paxoracle module, precompiles 0x901–0x904, PaxSpot contracts |
+
+Future version names: HyperNexus, HyperForge, HyperPrime, HyperVault.
+
+**Format:** `HyperPaxeer`
+**In config:** `network_version: hyperpaxeer`
+**Chain ID:** `hyperpax_125-1`
+
+---
+
+## Layer 3 — Binary Release (Runtime)
+
+Binary releases are the actual compiled software that validators and RPC nodes run. They cover VM patches, validator-side optimisations, node infrastructure changes, and bug fixes. Multiple binary releases can ship within a single network version.
+
+**Naming convention:** `Hyperpax-OS` + Greek Titan / Primordial codename.
+
+| Release | Status | What Changed |
+|---------|--------|-------------|
+| **Hyperpax-OS Cronos** | Active | Production binary — CometBFT v0.37.4, x/paxoracle keeper, stateful precompile framework, Docker-based node deployment via hpx CLI |
+
+Future release names: Atlas, Helios, Prometheus, Hyperion, Oceanus.
+
+**Format:** `Hyperpax-OS Cronos` or `Cronos Release`
+**In config:** `binary_version: cronos`
+**Binary executable:** `evmosd`
+
+---
+
+## Current Status
+
+| Layer | Name | Convention |
+|-------|------|-----------|
+| **Network** | Paxeer Network | Permanent identity |
+| **Fork** | Alexandria | Ancient seats of knowledge |
+| **Version** | HyperPaxeer | Hyper + compound noun |
+| **Binary** | Hyperpax-OS Cronos | Hyperpax-OS + Greek Titan |
+
+**Status badge:** `Alexandria / HyperPaxeer / Cronos`
+
+---
+
+## How Upgrades Work
+
+### Fork Upgrade
+
+1. Governance proposal defining the new consensus/crypto changes
+2. All validators halt at a coordinated block height
+3. Chain state backed up from one validator
+4. New fork binary distributed as Docker image
+5. All validators restart simultaneously on the new fork
+
+### Network Version Upgrade
+
+1. New precompiles, modules, or features implemented
+2. Binary updated to include new features
+3. Coordinated upgrade at target block height
+4. Chain continues with new capabilities active
+
+### Binary Release
+
+1. VM or validator software patch prepared
+2. Docker image published to registry
+3. Operators update via `hpx` CLI: re-run the installer
+4. Existing chain data preserved, no coordination required for non-breaking changes
+
+---
+
+## Resources
+
+<CardGroup cols={2}>
+  <Card
+    title="Architecture"
+    icon="sitemap"
+    href="/concepts/architecture/overview"
+  >
+    Dual-VM design and precompile framework
+  </Card>
+  <Card
+    title="Run a Node"
+    icon="server"
+    href="/validate/setup/run-a-validator"
+  >
+    Deploy nodes with the hpx CLI
+  </Card>
+</CardGroup>

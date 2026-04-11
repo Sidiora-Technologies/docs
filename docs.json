@@ -1,13 +1,12 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Paxeer Network Documentation",
+  "theme": "sequoia",
+  "name": "HyperPax  Docs",
   "colors": {
-    "primary": "#00D9FF",
-    "light": "#00F0FF",
-    "dark": "#00C2E0"
+    "primary": "#004CED",
+    "light": "#004CED",
+    "dark": "#004CED"
   },
-  "favicon": "/favicon.svg",
   "metadata": {
     "og:title": "Paxeer Network - Developer Documentation",
     "og:description": "Build on Paxeer Network - A high-performance, developer-friendly blockchain platform",
@@ -48,298 +47,244 @@
     }
   },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Getting Started",
-        "groups": [
-          {
-            "group": "Welcome",
-            "pages": [
-              "index",
-              "quickstart"
-            ]
-          },
-          {
-            "group": "Network",
-            "pages": [
-              "configuration",
-              "develop/mainnet"
-            ]
-          }
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "quickstart",
+          "configuration",
+          "network-status",
+          "versioning",
+          "develop/mainnet"
         ]
       },
       {
-        "tab": "Develop",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "develop/index"
-            ]
-          },
-          {
-            "group": "Smart Contracts",
-            "pages": [
-              "contracts",
-              "develop/smart-contracts/index",
-              "develop/smart-contracts/custom-improvement-proposals",
-              "develop/smart-contracts/list-evm-extensions"
-            ]
-          },
-          {
-            "group": "EVM Extensions",
-            "pages": [
-              "develop/smart-contracts/evm-extensions/evm-extensions",
-              "develop/smart-contracts/evm-extensions/authorization",
-              "develop/smart-contracts/evm-extensions/staking",
-              "develop/smart-contracts/evm-extensions/distribution",
-              "develop/smart-contracts/evm-extensions/ibc-transfer",
-              "develop/smart-contracts/evm-extensions/vesting"
-            ]
-          },
-          {
-            "group": "APIs & RPC",
-            "pages": [
-              "api-reference",
-              "rpc",
-              "develop/api/index",
-              "develop/api/networks",
-              "develop/api/cosmos-grpc",
-              "develop/api/tendermint-rpc"
-            ]
-          },
-          {
-            "group": "Tools & Integrations",
-            "pages": [
-              "tools",
-              "examples",
-              "develop/tools/index",
-              "develop/tools/client-integrations",
-              "develop/tools/contract-verifications",
-              "develop/wallet-integration/index",
-              "develop/block-explorers/index",
-              "develop/oracles/index",
-              "develop/graphs-indexers/index"
-            ]
-          },
-          {
-            "group": "Guides",
-            "pages": [
-              "app-developers/guides/building-apps",
-              "app-developers/guides/testing-apps",
-              {
-                "group": "Transactions",
-                "pages": [
-                  "app-developers/guides/transactions/fees",
-                  "app-developers/guides/transactions/estimates",
-                  "app-developers/guides/transactions/parameters",
-                  "app-developers/guides/transactions/statuses",
-                  "app-developers/guides/transactions/troubleshooting"
-                ]
-              }
-            ]
-          }
+        "group": "Develop",
+        "pages": [
+          "develop/index"
         ]
       },
       {
-        "tab": "Protocol",
-        "groups": [
-          {
-            "group": "Architecture",
-            "pages": [
-              "protocol/index",
-              "argus-vm",
-              "opax-28",
-              "concepts/architecture/overview"
-            ]
-          },
-          {
-            "group": "Modules",
-            "pages": [
-              "protocol/modules/index",
-              "protocol/modules/evm",
-              "protocol/modules/erc20",
-              "protocol/modules/inflation",
-              "protocol/modules/vesting",
-              "protocol/modules/epochs",
-              "protocol/modules/feemarket"
-            ]
-          },
-          {
-            "group": "Concepts",
-            "pages": [
-              "protocol/concepts/accounts",
-              "protocol/concepts/gas-and-fees",
-              "protocol/concepts/tokens",
-              "protocol/concepts/transactions",
-              "protocol/concepts/chain-id",
-              "protocol/concepts/encoding",
-              "protocol/concepts/keyring",
-              "protocol/concepts/signing",
-              "protocol/concepts/multisig",
-              "protocol/concepts/pending-state"
-            ]
-          },
-          {
-            "group": "CLI",
-            "pages": [
-              "protocol/cli/index",
-              "protocol/cli/configuration",
-              "protocol/cli/single-node",
-              "protocol/cli/multi-nodes",
-              "protocol/cli/cli-commands",
-              "protocol/cli/docker-build"
-            ]
-          },
-          {
-            "group": "Resources",
-            "pages": [
-              "protocol/ibc-channels",
-              "protocol/module-accounts",
-              "protocol/metrics",
-              "protocol/bugs",
-              "protocol/faq"
-            ]
-          }
+        "group": "Smart Contracts",
+        "pages": [
+          "contracts",
+          "develop/smart-contracts/index",
+          "develop/smart-contracts/custom-improvement-proposals",
+          "develop/smart-contracts/list-evm-extensions"
         ]
       },
       {
-        "tab": "Validators",
-        "groups": [
-          {
-            "group": "Getting Started",
-            "pages": [
-              "validate/index",
-              "validate/mainnet"
-            ]
-          },
-          {
-            "group": "Setup & Configuration",
-            "pages": [
-              "validate/setup/run-a-validator",
-              "validate/setup/configuration",
-              "validate/setup/state-sync",
-              "validate/setup/mempool",
-              "validate/setup/disk-usage-configuration",
-              "validate/setup/faq"
-            ]
-          },
-          {
-            "group": "Upgrades",
-            "pages": [
-              "validate/upgrades/index",
-              "validate/upgrades/automated-upgrades",
-              "validate/upgrades/manual-upgrades",
-              "validate/upgrades/rollback",
-              "validate/upgrades/list-of-upgrades",
-              "validate/upgrades/hard-fork-upgrades"
-            ]
-          },
-          {
-            "group": "IBC & Relayers",
-            "pages": [
-              "validate/relayers"
-            ]
-          }
+        "group": "EVM Extensions",
+        "pages": [
+          "develop/smart-contracts/evm-extensions/evm-extensions",
+          "develop/smart-contracts/evm-extensions/authorization",
+          "develop/smart-contracts/evm-extensions/staking",
+          "develop/smart-contracts/evm-extensions/distribution",
+          "develop/smart-contracts/evm-extensions/ibc-transfer",
+          "develop/smart-contracts/evm-extensions/vesting"
         ]
       },
       {
-        "tab": "Ecosystem",
-        "groups": [
-          {
-            "group": "DeFi Protocols",
-            "pages": [
-              "paxdex",
-              "lending",
-              "chainflow"
-            ]
-          },
-          {
-            "group": "Infrastructure",
-            "pages": [
-              "ctm",
-              "blockscout-api"
-            ]
-          }
+        "group": "APIs & RPC",
+        "pages": [
+          "rpc",
+          "openapi",
+          "develop/api/index",
+          "develop/api/networks",
+          "develop/api/tendermint-rpc"
+        ]
+      },
+      {
+        "group": "Tools & Integrations",
+        "pages": [
+          "tools",
+          "examples",
+          "develop/tools/index",
+          "develop/tools/client-integrations",
+          "develop/tools/contract-verifications",
+          "develop/wallet-integration/index",
+          "develop/block-explorers/index",
+          "develop/oracles/index",
+          "develop/graphs-indexers/index"
+        ]
+      },
+      {
+        "group": "Guides",
+        "pages": [
+          "app-developers/guides/building-apps",
+          "app-developers/guides/testing-apps"
+        ]
+      },
+      {
+        "group": "Transactions",
+        "pages": [
+          "app-developers/guides/transactions/fees",
+          "app-developers/guides/transactions/estimates",
+          "app-developers/guides/transactions/parameters",
+          "app-developers/guides/transactions/statuses",
+          "app-developers/guides/transactions/troubleshooting"
+        ]
+      },
+      {
+        "group": "Architecture",
+        "pages": [
+          "protocol/index",
+          "concepts/architecture/overview",
+          "argus-vm",
+          "pax-28"
+        ]
+      },
+      {
+        "group": "Modules",
+        "pages": [
+          "protocol/modules/index",
+          "protocol/modules/evm",
+          "protocol/modules/erc20",
+          "protocol/modules/inflation",
+          "protocol/modules/vesting",
+          "protocol/modules/epochs",
+          "protocol/modules/feemarket"
+        ]
+      },
+      {
+        "group": "Concepts",
+        "pages": [
+          "protocol/concepts/accounts",
+          "protocol/concepts/gas-and-fees",
+          "protocol/concepts/tokens",
+          "protocol/concepts/transactions",
+          "protocol/concepts/chain-id",
+          "protocol/concepts/encoding",
+          "protocol/concepts/keyring",
+          "protocol/concepts/signing",
+          "protocol/concepts/multisig",
+          "protocol/concepts/pending-state"
+        ]
+      },
+      {
+        "group": "CLI",
+        "pages": [
+          "protocol/cli/index",
+          "protocol/cli/configuration",
+          "protocol/cli/single-node",
+          "protocol/cli/multi-nodes",
+          "protocol/cli/cli-commands",
+          "protocol/cli/docker-build"
+        ]
+      },
+      {
+        "group": "Resources",
+        "pages": [
+          "protocol/ibc-channels",
+          "protocol/module-accounts",
+          "protocol/metrics",
+          "protocol/bugs",
+          "protocol/faq"
+        ]
+      },
+      {
+        "group": "Validators",
+        "pages": [
+          "validate/index",
+          "validate/mainnet"
+        ]
+      },
+      {
+        "group": "Setup & Configuration",
+        "pages": [
+          "validate/setup/run-a-validator",
+          "validate/setup/configuration",
+          "validate/setup/state-sync",
+          "validate/setup/mempool",
+          "validate/setup/disk-usage-configuration",
+          "validate/setup/faq"
+        ]
+      },
+      {
+        "group": "Upgrades",
+        "pages": [
+          "validate/upgrades/index",
+          "validate/upgrades/automated-upgrades",
+          "validate/upgrades/manual-upgrades",
+          "validate/upgrades/rollback",
+          "validate/upgrades/hard-fork-upgrades"
+        ]
+      },
+      {
+        "group": "IBC & Relayers",
+        "pages": [
+          "validate/relayers"
+        ]
+      },
+      {
+        "group": "Exchange & Trading",
+        "pages": [
+          "paxspot",
+          "sidiora-dex"
+        ]
+      },
+      {
+        "group": "Ecosystem",
+        "pages": [
+          "ctm"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Explorer",
-          "href": "https://paxscan.paxeer.app",
-          "icon": "magnifying-glass"
-        },
-        {
-          "anchor": "Sidiora Exchange",
-          "href": "https://org.sidiora.exchange",
-          "icon": "arrow-right-arrow-left"
-        },
-        {
-          "anchor": "Sidiora Trade",
-          "href": "https://trade.sidiora.exchange",
-          "icon": "arrow-right-arrow-left"
-        },
-        {
-          "anchor": "White-Paper",
-          "href": "https://whitepaper.paxeer.app",
-          "icon": "paper"
-        },
-        {
-          "anchor": "Chainflow",
-          "href": "https://Chainflowtrading.com",
-          "icon": "signal-bars"
-        }
-      ]
+    ]
+  },
+  "fonts": {
+    "family": "Pangram Sans Rounded",
+    "weight": 700,
+    "source": "https://github.com/dev-paxeer/musical-funicular/tree/main/pangram-sans-rounded",
+    "format": "woff",
+    "heading": {
+      "family": "Pangram Sans Rounded",
+      "weight": 500
+    },
+    "body": {
+      "family": "Inter",
+      "weight": 400
     }
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+  "api": {
+    "openapi": "/openapi.yaml",
+    "playground": {
+      "display": "interactive"
+    }
+  },
+  "thumbnails": {
+    "background": "/images/main.webp",
+    "appearance": "dark"
+  },
+  "styling": {
+    "eyebrows": "section"
   },
   "navbar": {
     "links": [
       {
-        "label": "Website",
-        "href": "https://www.paxeer.app"
+        "label": "Developer Portal",
+        "href": "https://build.hyperpaxeer.com/"
       },
       {
-        "label": "Community",
-        "href": "https://paxeer.app/community"
+        "label": "Block Explorer",
+        "href": "https://paxscan.io/"
       },
       {
-        "label": "Blog",
-        "href": "https://paxeer.app/blog"
-      },
-      {
-        "label": "Support",
-        "href": "https://t.me/paxeer"
+        "label": "Whitepaper",
+        "href": "http://whitepaper.paxeer.app/"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Get Started",
-      "href": "https://paxeernetworkprotocol.mintlify.app/"
-    }
+    ]
   },
-  "topbarLinks": [
-    {
-      "name": "GitHub",
-      "url": "https://github.com/paxeer-network"
-    }
-  ],
-  "topbarCtaButton": {
-    "type": "button",
-    "name": "Launch App",
-    "url": "https://paxscan.paxeer.app"
+  "favicon": "/images/sid-fun-icon(1).png",
+  "logo": {
+    "light": "/images/sid-fun-icon(1).png",
+    "dark": "/images/sid-fun-icon2.png",
+    "href": "/"
   },
-  "analytics": {
-    "ga4": {
-      "measurementId": "G-XXXXXXXXXX"
-    }
+  "appearance": {
+    "default": "dark"
   },
-  "search": {
-    "prompt": "Search Paxeer Network docs..."
+  "icons": {
+    "library": "fontawesome"
   }
 }

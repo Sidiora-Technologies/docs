@@ -1,12 +1,12 @@
 ---
 title: "SDKs & Tools"
-description: "Recommended tools and libraries for building on Paxeer Network"
+description: "Recommended tools and libraries for building on HyperPaxeer"
 icon: "toolbox"
 ---
 
 ## Overview
 
-Recommended tools and libraries for building on Paxeer Network. All standard Ethereum development tools work seamlessly with Paxeer.
+Recommended tools and libraries for building on HyperPaxeer. All standard Ethereum development tools work seamlessly with Paxeer.
 
 ## Frontend Libraries
 
@@ -88,7 +88,7 @@ Recommended tools and libraries for building on Paxeer Network. All standard Eth
 ## JavaScript Libraries
 
 <Tabs>
-  <Tab title="ethers.js">
+  <Tab value="ethers" title="ethers.js">
     ### ethers.js v6
     
     Complete Ethereum library and wallet implementation in JavaScript.
@@ -117,7 +117,7 @@ Recommended tools and libraries for building on Paxeer Network. All standard Eth
     </Card>
   </Tab>
 
-  <Tab title="web3.js">
+  <Tab value="web3" title="web3.js">
     ### web3.js v4
     
     Ethereum JavaScript API - Collection of libraries for interacting with Ethereum.
@@ -236,7 +236,7 @@ Recommended tools and libraries for building on Paxeer Network. All standard Eth
 ## Wallet Integration
 
 <Tabs>
-  <Tab title="MetaMask">
+  <Tab value="metamask" title="MetaMask">
     ### MetaMask
     
     Most popular browser extension wallet for Ethereum.
@@ -254,12 +254,12 @@ Recommended tools and libraries for building on Paxeer Network. All standard Eth
     console.log('Connected:', accounts[0]);
     ```
     
-    ```javascript Add Paxeer Network
+    ```javascript Add HyperPaxeer
     await window.ethereum.request({
       method: 'wallet_addEthereumChain',
       params: [{
         chainId: '0xe5',
-        chainName: 'Paxeer Network',
+        chainName: 'HyperPaxeer',
         nativeCurrency: {
           name: 'Paxeer',
           symbol: 'PAX',
@@ -272,7 +272,7 @@ Recommended tools and libraries for building on Paxeer Network. All standard Eth
     ```
   </Tab>
 
-  <Tab title="WalletConnect">
+  <Tab value="walletconnect" title="WalletConnect">
     ### WalletConnect
     
     Open protocol for connecting wallets to dApps.
@@ -297,7 +297,7 @@ Recommended tools and libraries for building on Paxeer Network. All standard Eth
     [WalletConnect Documentation →](https://docs.walletconnect.com)
   </Tab>
 
-  <Tab title="RainbowKit">
+  <Tab value="rainbowkit" title="RainbowKit">
     ### RainbowKit
     
     The best way to connect a wallet in React.
@@ -334,7 +334,7 @@ Recommended tools and libraries for building on Paxeer Network. All standard Eth
   icon="magnifying-glass"
   href="https://paxscan.paxeer.app"
 >
-  Official block explorer for Paxeer Network. View transactions, blocks, addresses, and verify contracts.
+  Official block explorer for HyperPaxeer. View transactions, blocks, addresses, and verify contracts.
   
   **Features:**
   - Transaction tracking
@@ -442,7 +442,7 @@ Recommended tools and libraries for building on Paxeer Network. All standard Eth
     icon="rocket"
     href="/quickstart"
   >
-    Get started with Paxeer Network
+    Get started with HyperPaxeer
   </Card>
   <Card
     title="Configuration"

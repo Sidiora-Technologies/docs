@@ -1,0 +1,111 @@
+---
+title: "Network Status"
+description: "Live node health, latency benchmarks, and validator set for HyperPaxeer"
+icon: "signal"
+---
+
+## Validator Set
+
+HyperPaxeer runs on seven active validators across four regions. Consensus requires a two-thirds supermajority of voting power.
+
+| Validator | Region | Voting Power | Status | Peers | RPC Latency |
+|-----------|--------|-------------|--------|-------|-------------|
+| US-East Charlotte V9 | us-east | 22,107,938 | Healthy | 14 | 20 ms |
+| US-East Miami V7 | us-east | 21,451,310 | Healthy | 18 | 22 ms |
+| EU-East Prague V1 | eu-east | 2,500,000 | Healthy | 16 | 221 ms |
+| EU-East Prague V7 | eu-east | 2,500,000 | Healthy | 15 | 244 ms |
+| EU-East Budapest V4 | eu-east | 2,500,000 | Healthy | 18 | 222 ms |
+| EU-East Budapest V9 | eu-east | 2,500,000 | Healthy | 16 | 268 ms |
+| UK-East Glasgow V3 | uk-east | 26,492,000 | Degraded | 12 | 123 ms |
+
+<Note>
+Data from benchmark run **2026-04-11 10:18 UTC** at block height ~4,576,800.
+</Note>
+
+---
+
+## Block Timing
+
+Measured over 50 consecutive blocks (height 4,576,817 → 4,576,867):
+
+| Metric | Value |
+|--------|-------|
+| **Median** | 201 ms |
+| **Average** | 240 ms |
+| **Min** | 199 ms |
+| **Max** | 303 ms |
+| **p95** | 302 ms |
+| **Std Dev** | 49.2 ms |
+
+---
+
+## RPC / Full Node Fleet
+
+30 RPC nodes deployed across 15 regions, all fully synced from genesis (block 1).
+
+| Region | Nodes | Avg RPC Latency | Avg EVM Latency |
+|--------|-------|----------------|-----------------|
+| JP-East (Tokyo) | 2 | 327 ms | 319 ms |
+| SG-South (Singapore) | 2 | 419 ms | 387 ms |
+| AU-South (Sydney) | 2 | 406 ms | 411 ms |
+| KR-East (Seoul) | 2 | 440 ms | 344 ms |
+| IN-South (Mumbai) | 2 | 436 ms | 498 ms |
+| US-Central (Chicago) | 2 | 510 ms | 338 ms |
+| US-Central (Dallas) | 2 | 397 ms | 369 ms |
+| SE-North (Stockholm) | 2 | 456 ms | 395 ms |
+| BR-South (Sao Paulo) | 2 | 459 ms | 334 ms |
+| CA-East (Toronto) | 2 | 428 ms | 487 ms |
+| CA-West (Vancouver) | 2 | 688 ms | 444 ms |
+| ES-South (Madrid) | 2 | 848 ms | 480 ms |
+| IT-South (Milan) | 2 | 834 ms | 550 ms |
+| FI-North (Helsinki) | 2 | 528 ms | 380 ms |
+| NO-North (Oslo) | 2 | 668 ms | 359 ms |
+
+All nodes report 7–9 connected peers, zero pending transactions in txpool, and `catching_up: false`.
+
+---
+
+## Chain Statistics
+
+| Metric | Value |
+|--------|-------|
+| **Chain ID** | `hyperpax_125-1` (EVM: `125`) |
+| **Block Height** | ~4,576,800 (as of 2026-04-11) |
+| **Genesis** | Block 1 (all nodes retain full history) |
+| **Consensus** | CometBFT v0.37.4 (PoS) |
+| **Fork** | Alexandria (Cosmos SDK + CometBFT) |
+| **Binary** | Hyperpax-OS Cronos |
+| **Token** | PAX (`ahpx` base / `hpx` display) |
+
+---
+
+## Endpoints
+
+| Type | URL |
+|------|-----|
+| **JSON-RPC (EVM)** | `https://public-rpc.paxeer.app/rpc` |
+| **CometBFT RPC** | `https://public-rpc.paxeer.app:26657` |
+| **REST API** | `https://public-rpc.paxeer.app:1317` |
+| **gRPC** | `https://public-rpc.paxeer.app:9090` |
+| **Block Explorer** | [paxscan.paxeer.app](https://paxscan.paxeer.app) |
+
+---
+
+## Resources
+
+<CardGroup cols={2}>
+  <Card
+    title="Run a Node"
+    icon="server"
+    href="/validate/setup/run-a-validator"
+  >
+    Deploy your own RPC or Validator node with the hpx CLI
+  </Card>
+  <Card
+    title="Block Explorer"
+    icon="magnifying-glass"
+    href="https://paxscan.paxeer.app"
+  >
+    View live chain data on PaxeerScan
+  </Card>
+</CardGroup>

@@ -63,7 +63,7 @@ which covers both the priority fee and the block's network fee per gas (aka: bas
 :::tip
 The Cosmos SDK uses a different terminology for `gas` than Ethereum.
 What is called `gasLimit` on Ethereum is called `gasWanted` on Cosmos.
-You might encounter both terminologies on Paxeer Network since it builds Ethereum on top of the SDK,
+You might encounter both terminologies on HyperPaxeer since it builds Ethereum on top of the SDK,
 e.g. when using different wallets like Keplr for Cosmos and Metamask for Ethereum.
 :::
 
@@ -89,7 +89,7 @@ is an additional gas price that can be added to the `baseFee` in order to incent
 The higher the tip, the more likely the transaction is included in the block.
 
 Until the Cosmos SDK version v0.46, however, there is no notion of transaction prioritization.
-Thus, the tip for an EIP-1559 transaction on Paxeer Network should be zero
+Thus, the tip for an EIP-1559 transaction on HyperPaxeer should be zero
 (`MaxPriorityFeePerGas` JSON-RPC endpoint returns `0`).
 Have a look at the [mempool](https://docs.paxeer.app/validate/setup-and-configuration/mempool) docs
 to read more about how to leverage transaction prioritization.
@@ -193,7 +193,7 @@ The base fee is initialized at `EnableHeight` to the `InitialBaseFee` value defi
 
 The base fee is after adjusted according to the total gas used in the previous block.
 
-```golang
+```go
 parent_gas_target = parent_gas_limit / ELASTICITY_MULTIPLIER
 
 if EnableHeight == block.number
@@ -239,16 +239,16 @@ The `x/feemarket` module emits the following events:
 
 ### BeginBlocker
 
-| Type       | Attribute Key   | Attribute Value |
-| ---------- | --------------- | --------------- |
-| fee_market | base_fee        | {baseGasPrices} |
+| Type       | Attribute Key   | Attribute Value   |
+| ---------- | --------------- | ----------------- |
+| fee_market | base_fee        | `{baseGasPrices}` |
 
 ### EndBlocker
 
-| Type       | Attribute Key   | Attribute Value |
-| ---------- | --------------- | --------------- |
-| block_gas  | height          | {blockHeight}   |
-| block_gas  | amount          | {blockGasUsed}  |
+| Type       | Attribute Key   | Attribute Value  |
+| ---------- | --------------- | ---------------- |
+| block_gas  | height          | `{blockHeight}`  |
+| block_gas  | amount          | `{blockGasUsed}` |
 
 ## Parameters
 
@@ -274,7 +274,7 @@ A user can query and interact with the `feemarket` module using the CLI.
 The `query` commands allow users to query `feemarket` state.
 
 ```bash
-hyperpaxd query feemarket --help
+evmosd query feemarket --help
 ```
 
 ##### Base Fee
@@ -282,13 +282,13 @@ hyperpaxd query feemarket --help
 The `base-fee` command allows users to query the block base fee by height.
 
 ```bash
-hyperpaxd query feemarket base-fee [flags]
+evmosd query feemarket base-fee [flags]
 ```
 
 Example:
 
 ```bash
-hyperpaxd query feemarket base-fee ...
+evmosd query feemarket base-fee ...
 ```
 
 Example Output:
@@ -302,13 +302,13 @@ base_fee: "512908936"
 The `block-gas` command allows users to query the block gas by height.
 
 ```bash
-hyperpaxd query feemarket block-gas [flags]
+evmosd query feemarket block-gas [flags]
 ```
 
 Example:
 
 ```bash
-hyperpaxd query feemarket block-gas ...
+evmosd query feemarket block-gas ...
 ```
 
 Example Output:
@@ -322,13 +322,13 @@ gas: "21000"
 The `params` command allows users to query the module params.
 
 ```bash
-hyperpaxd query params subspace [subspace] [key] [flags]
+evmosd query params subspace [subspace] [key] [flags]
 ```
 
 Example:
 
 ```bash
-hyperpaxd query params subspace feemarket ElasticityMultiplier ...
+evmosd query params subspace feemarket ElasticityMultiplier ...
 ```
 
 Example Output:
@@ -345,12 +345,12 @@ value: "2"
 
 | Verb   | Method                                  | Description            |
 |--------|-----------------------------------------|------------------------|
-| `gRPC` | `ethermint.feemarket.v1.Query/Params`   | Get the module params  |
-| `gRPC` | `ethermint.feemarket.v1.Query/BaseFee`  | Get the block base fee |
-| `gRPC` | `ethermint.feemarket.v1.Query/BlockGas` | Get the block gas used |
-| `GET`  | `/ethermint/feemarket/v1/params`        | Get the module params  |
-| `GET`  | `/ethermint/feemarket/v1/base_fee`      | Get the block base fee |
-| `GET`  | `/ethermint/feemarket/v1/block_gas`     | Get the block gas used |
+| `gRPC` | `hyperpaxeer.feemarket.v1.Query/Params`   | Get the module params  |
+| `gRPC` | `hyperpaxeer.feemarket.v1.Query/BaseFee`  | Get the block base fee |
+| `gRPC` | `hyperpaxeer.feemarket.v1.Query/BlockGas` | Get the block gas used |
+| `GET`  | `/hyperpaxeer/feemarket/v1/params`        | Get the module params  |
+| `GET`  | `/hyperpaxeer/feemarket/v1/base_fee`      | Get the block base fee |
+| `GET`  | `/hyperpaxeer/feemarket/v1/block_gas`     | Get the block gas used |
 
 ## AnteHandlers
 

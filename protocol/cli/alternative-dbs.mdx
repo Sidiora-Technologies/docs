@@ -5,14 +5,14 @@
 # Alternative databases
 
 To use a different database than the default one (levelDB),
-you may need to build the `hyperpaxd` binary manually with specific flags and configurations.
+you may need to build the `evmosd` binary manually with specific flags and configurations.
 
 Learn about the different options supported.
 
 ## Prerequisites
 
 - Golang version `>=1.22.2` ([installation guide](https://go.dev/doc/install))
-- [Source code of the desired `hyperpaxd`](https://github.com/Paxeer-Network/Paxeer-Network) version.
+- [Source code of the desired `evmosd`](https://github.com/Paxeer-Network/Paxeer-Network) version.
   For example, if you want to use `v19.0.0`, execute the following command to download only the necessary code:
 
   ```bash
@@ -21,7 +21,7 @@ Learn about the different options supported.
 
 ## Pebble DB
 
-### Install `hyperpaxd` binary from source
+### Install `evmosd` binary from source
 
 ```bash
 # compile and install the binary
@@ -31,7 +31,7 @@ COSMOS_BUILD_OPTIONS=pebbledb make install
 Check the binary version has the `-pebbledb` suffix
 
 ```bash
-❯ hyperpaxd version
+❯ evmosd version
 v19.0.0-pebbledb
 ```
 
@@ -40,8 +40,8 @@ NOTE: if using a version **before v19**, you'll need
 to replace the cometbft-db dependency before installing the binary:
 
 ```bash
-# cd into the directory where you have the Paxeer Network protocol source code
-cd Paxeer Network
+# cd into the directory where you have the HyperPaxeer protocol source code
+cd HyperPaxeer
 
 # replace the cometbft-db dependency
 go mod edit -replace github.com/cometbft/cometbft-db=github.com/notional-labs/cometbft-db@pebble
@@ -65,7 +65,7 @@ db_backend = "pebbledb"
 
 ### Build docker image
 
-To build a docker image with the `hyperpaxd` binary compiled
+To build a docker image with the `evmosd` binary compiled
 to use pebbledb, run the following command:
 
 ```
@@ -145,10 +145,10 @@ To install this library, you will need to clone the
 
 Clone only the required version of it.
 To find out which is the required version,
-check the tag of the `grocksdb` dependency in the `go.mod` file of the Paxeer Network repository.
+check the tag of the `grocksdb` dependency in the `go.mod` file of the HyperPaxeer repository.
 For example, if the `go.mod` has:
 
-```golang
+```go
 github.com/linxGnu/grocksdb v1.9.2
 ```
 
@@ -169,7 +169,7 @@ git clone -b v9.2.1 --single-branch https://github.com/facebook/rocksdb
 cd rocksdb
 
 # take note of the path where you have the rocksdb code
-# you will need this for building the hyperpaxd binary
+# you will need this for building the evmosd binary
 PATH_TO_ROCKSDB=$(pwd)
 
 # install librocksdb
@@ -182,13 +182,13 @@ make static_lib
 
 The installation process may take several minutes.
 
-### Install `hyperpaxd` binary
+### Install `evmosd` binary
 
-Once this completes, install the `hyperpaxd` binary with rocksDB support
+Once this completes, install the `evmosd` binary with rocksDB support
 
 ```bash
-# cd into the directory where the Paxeer Network source code is
-cd Paxeer Network
+# cd into the directory where the HyperPaxeer source code is
+cd HyperPaxeer
 
 # compile and install the binary
 # IMPORTANT: make sure to have the PATH_TO_ROCKSDB with the path where you cloned the rocksdb repository
@@ -219,7 +219,7 @@ make install
 Check the binary version has the `-rocksdb` suffix
 
 ```bash
-❯ hyperpaxd version
+❯ evmosd version
 v19.0.0-rocksdb
 ```
 
@@ -235,7 +235,7 @@ db_backend = "rocksdb"
 ## Version DB & MemIAVL
 
 :::note
-The Paxeer Network team carried out an
+The HyperPaxeer team carried out an
 [analysis to compare the performance of a 5-node network with LevelDB vs VersionDB + MemIAVL](https://www.notion.so/altiplanic/LevelDB-vs-MemIAVL-VersionDB-2034a05c7e1646369d034eb423a25279?pvs=4).
 The results of the analysis show that even though MemIAVL offers
 a performance boost for state-sync and fast-sync processes,
@@ -254,7 +254,7 @@ For more information about it, refer to these resources:
 
 #### Prerequisites
 
-- `hyperpaxd` binary with `librocksdb`. Refer to [the previous section](#rocks-db) for the procedure on how to build this binary.
+- `evmosd` binary with `librocksdb`. Refer to [the previous section](#rocks-db) for the procedure on how to build this binary.
 
 #### Update configuration
 
@@ -281,7 +281,7 @@ For more information about it, check [the documentation](https://github.com/cryp
 
 #### Prerequisites
 
-- `hyperpaxd` binary with `librocksdb`. Refer to [the RocksDB section](#rocks-db) for the procedure on how to build this binary.
+- `evmosd` binary with `librocksdb`. Refer to [the RocksDB section](#rocks-db) for the procedure on how to build this binary.
 
 #### Update configuration
 

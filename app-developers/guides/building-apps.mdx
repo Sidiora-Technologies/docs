@@ -1,20 +1,20 @@
 ---
-title: "Building Apps on Paxeer Network"
-description: "Learn the basics of building applications on Paxeer Network"
+title: "Building Apps on HyperPaxeer"
+description: "Learn the basics of building applications on HyperPaxeer"
 icon: "hammer"
 ---
 
 ## Overview
 
-This guide explains the basics of Paxeer Network development. Paxeer Network is [EVM equivalent](https://web.archive.org/web/20231127160757/https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), meaning it runs the same EVM as Ethereum. Therefore, the differences between Paxeer development and Ethereum development are minimal.
+This guide explains the basics of HyperPaxeer development. HyperPaxeer is [EVM equivalent](https://web.archive.org/web/20231127160757/https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), meaning it runs the same EVM as Ethereum. Therefore, the differences between Paxeer development and Ethereum development are minimal.
 
 <Info>
-Paxeer Network Chain ID: **125**
+HyperPaxeer Chain ID: **125**
 </Info>
 
-## Paxeer Network Endpoints
+## HyperPaxeer Endpoints
 
-To access Paxeer Network, you need an RPC endpoint:
+To access HyperPaxeer, you need an RPC endpoint:
 
 ```
 https://public-rpc.paxeer.app/rpc
@@ -24,7 +24,7 @@ https://public-rpc.paxeer.app/rpc
 
 | Parameter | Value |
 |-----------|-------|
-| Network Name | Paxeer Network |
+| Network Name | HyperPaxeer |
 | Chain ID | 125 |
 | Currency | PAX |
 | RPC URL | https://public-rpc.paxeer.app/rpc |
@@ -41,7 +41,7 @@ https://public-rpc.paxeer.app/rpc
   </Step>
 
   <Step title="Configure Network">
-    Add Paxeer Network to your configuration:
+    Add HyperPaxeer to your configuration:
     
     <Tabs>
       <Tab title="Hardhat">
@@ -117,7 +117,7 @@ https://public-rpc.paxeer.app/rpc
   </Step>
 
   <Step title="Deploy to Paxeer">
-    Deploy to Paxeer Network:
+    Deploy to HyperPaxeer:
     
     ```bash
     # Hardhat
@@ -380,25 +380,25 @@ function MyComponent() {
 
 ## Differences from Ethereum
 
-While Paxeer Network is EVM equivalent, there are a few minor differences:
+While HyperPaxeer is EVM equivalent, there are a few minor differences:
 
 <AccordionGroup>
   <Accordion title="Block Time" icon="clock">
     - **Ethereum:** ~12 seconds
-    - **Paxeer Network:** ~2 seconds
+    - **HyperPaxeer:** ~2 seconds
     
     Impact: Faster confirmations, more frequent events
   </Accordion>
 
   <Accordion title="Gas Costs" icon="gas-pump">
     - **Ethereum:** High (varies widely)
-    - **Paxeer Network:** Very low (99%+ cheaper)
+    - **HyperPaxeer:** Very low (99%+ cheaper)
     
     Impact: More economical to run complex operations
   </Accordion>
 
   <Accordion title="Opcodes" icon="code">
-    All standard EVM opcodes are supported. Paxeer Network is fully EVM equivalent.
+    All standard EVM opcodes are supported. HyperPaxeer is fully EVM equivalent.
   </Accordion>
 </AccordionGroup>
 

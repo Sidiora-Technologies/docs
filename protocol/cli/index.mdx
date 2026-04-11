@@ -1,14 +1,19 @@
-# HyperPaxeer Network CLI
+---
+title: CLI
+description: Command-line tools and node operation guides.
+---
 
-`hyperpaxd` is the all-in-one command-line interface (CLI). It allows you to run an Paxeer Network node, manage wallets and interact
- with the Paxeer Network network through queries and transactions. This introduction will explain how to install the `hyperpaxd`
- binary onto your system and guide you through some simple examples how to use hyperpaxd.
+# HyperPaxeer CLI
+
+`evmosd` is the all-in-one command-line interface (CLI). It allows you to run an HyperPaxeer node, manage wallets and interact
+ with the HyperPaxeer network through queries and transactions. This introduction will explain how to install the `evmosd`
+ binary onto your system and guide you through some simple examples how to use evmosd.
 
 ## Prerequisites
 
 #### Go
 
-Paxeer Network is built using [Go](https://golang.org/dl/) version `1.20+`. Check your version with:
+HyperPaxeer is built using [Go](https://golang.org/dl/) version `1.20+`. Check your version with:
 
 ```bash
 go version
@@ -23,7 +28,7 @@ export PATH=$PATH:$(go env GOPATH)/bin
 
 #### jq
 
-Paxeer Network scripts are using [jq](https://stedolan.github.io/jq/download/) version `1.6+`. Check your version with:
+HyperPaxeer scripts are using [jq](https://stedolan.github.io/jq/download/) version `1.6+`. Check your version with:
 
 ```
 jq --version
@@ -32,56 +37,56 @@ jq --version
 ## Installation
 
 You can download the latest binaries from the repo and install them, or 
-you can build and install the `hyperpaxd` binaries from source or using Docker.
+you can build and install the `evmosd` binaries from source or using Docker.
 
 ### Download the binaries
 
 - Go to the [releases section of the repository](https://github.com/Paxeer-Network/Paxeer-Network/releases)
 - Choose the desired release or pre-release you want to install on your machine
 - Select and download from the `Assets` dropdown the corresponding tar or zip file for your OS
-- Extract the files. The `hyperpaxd` binaries is located in the `bin` directory of the extrated files
-- Add the `hyperpaxd` binaries to your path, e.g. you can move it to `$(go env GOPATH)/bin`
+- Extract the files. The `evmosd` binaries is located in the `bin` directory of the extrated files
+- Add the `evmosd` binaries to your path, e.g. you can move it to `$(go env GOPATH)/bin`
 
-After installation is done, check that the `hyperpaxd` binaries have been successfully installed:
+After installation is done, check that the `evmosd` binaries have been successfully installed:
 
 ```bash
-hyperpaxd version
+evmosd version
 ```
 
 ### Build From Source
 
-Clone and build the Paxeer Network from source using `git`. The `<tag>` refers to a release tag on Github. Check the latest Paxeer Network
+Clone and build the HyperPaxeer from source using `git`. The `<tag>` refers to a release tag on Github. Check the latest HyperPaxeer
 version on the [releases section of the repository](https://github.com/Paxeer-Network/Paxeer-Network/releases):
 
 ```bash
 git clone https://github.com/Paxeer-Network/Paxeer-Network.git
-cd Paxeer Network
+cd HyperPaxeer
 git fetch
 git checkout <tag>
 make install
 ```
 
-After installation is done, check that the hyperpaxd binaries have been successfully installed:
+After installation is done, check that the evmosd binaries have been successfully installed:
 
 ```bash
-hyperpaxd version
+evmosd version
 ```
 
 :::info
-If the `hyperpaxd: command not found` error message is returned, confirm that you have configured [Go](#go) correctly.
+If the `evmosd: command not found` error message is returned, confirm that you have configured [Go](#go) correctly.
 :::
 
 ### Docker
 
-When it comes to using Docker with Paxeer Network, there are two options available:
-Build a binary of the Paxeer Network daemon inside a dockerized build environment
-or build a Docker image, that can be used to spin up individual containers running the Paxeer Network binary.
+When it comes to using Docker with HyperPaxeer, there are two options available:
+Build a binary of the HyperPaxeer daemon inside a dockerized build environment
+or build a Docker image, that can be used to spin up individual containers running the HyperPaxeer binary.
 For information on how to achieve this,
 proceed to the dedicated page on [working with Docker](./docker-build.md).
 
-## Run an Paxeer Network node
+## Run an HyperPaxeer node
 
-To become familiar with Paxeer Network, you can run a local blockchain node that produces blocks and exposes EVM and Cosmos
+To become familiar with HyperPaxeer, you can run a local blockchain node that produces blocks and exposes EVM and Cosmos
 endpoints. This allows you to deploy and interact with smart contracts locally or test core protocol functionality.
 
 Run the local node by executing the `local_node.sh` script in the base directory of the repository:
@@ -90,11 +95,11 @@ Run the local node by executing the `local_node.sh` script in the base directory
 ./local_node.sh
 ```
 
-The script stores the node configuration including the local default endpoints under `~/.tmp-hyperpaxd/config/config.toml`.
+The script stores the node configuration including the local default endpoints under `~/.tmp-evmosd/config/config.toml`.
 If you have previously run the script, the script allows you to overwrite the existing configuration and start a new
 local node.
 
-Once your node is running you will see it validating and producing blocks in your local Paxeer Network blockchain:
+Once your node is running you will see it validating and producing blocks in your local HyperPaxeer blockchain:
 
 ```bash
 12:59PM INF executed block height=1 module=state num_invalid_txs=0 num_valid_txs=0 server=node
@@ -105,61 +110,61 @@ Once your node is running you will see it validating and producing blocks in you
 For more information on how to customize a local node,
 head over to the [Single Node](./Paxeer-Network-cli/single-node) page.
 
-## Using `hyperpaxd`
+## Using `evmosd`
 
-After installing the `hyperpaxd` binary, you can run commands using:
+After installing the `evmosd` binary, you can run commands using:
 
 ```bash
-hyperpaxd [command]
+evmosd [command]
 ```
 
 There is also a `-h`, `--help` command available
 
 ```bash
-hyperpaxd -h
+evmosd -h
 ```
 
 It is possible to maintain multiple node configurations at the same time. To specify a configuration use the `--home`
-flag. In the following examples we will be using the default config for a local node, located at `~/.tmp-hyperpaxd`.
+flag. In the following examples we will be using the default config for a local node, located at `~/.tmp-evmosd`.
 
 ### Manage wallets
 
-You can manage your wallets using the hyperpaxd binary to store private keys and sign transactions over CLI. To view all
+You can manage your wallets using the evmosd binary to store private keys and sign transactions over CLI. To view all
 keys use:
 
 ```bash
-hyperpaxd keys list \
---home ~/.tmp-hyperpaxd \
+evmosd keys list \
+--home ~/.tmp-evmosd \
 --keyring-backend test
 
 # Example Output:
-# - address: Paxeer Network19xnmslvl0pcmydu4m52h2gf0std5ee5pfgpyuf
+# - address: HyperPaxeer19xnmslvl0pcmydu4m52h2gf0std5ee5pfgpyuf
 #   name: dev0
-#   pubkey: '{"@type":"/ethermint.crypto.v1.ethsecp256k1.PubKey","key":"AzKouyoUL0UUS1qRUZdqyVsTPkCAFWwxx3+BTOw36nKp"}'
+#   pubkey: '{"@type":"/hyperpaxeer.crypto.v1.ethsecp256k1.PubKey","key":"AzKouyoUL0UUS1qRUZdqyVsTPkCAFWwxx3+BTOw36nKp"}'
 #   type: local
 ```
 
 You can generate a new key/mnemonic with a `$NAME` with:
 
 ```bash
-hyperpaxd keys add [name] \
---home ~/.tmp-hyperpaxd \
+evmosd keys add [name] \
+--home ~/.tmp-evmosd \
 --keyring-backend test
 ```
 
-To export your Paxeer Network key as an Ethereum private key (for use with [Metamask](https://academy.hyperpaxd.org/articles/beginner/connect-your-wallet/metamask)
+To export your HyperPaxeer key as an Ethereum private key (for use with [Metamask](https://academy.evmosd.org/articles/beginner/connect-your-wallet/metamask)
  for example):
 
 ```bash
-hyperpaxd keys unsafe-export-eth-key [name] \
---home ~/.tmp-hyperpaxd \
+evmosd keys unsafe-export-eth-key [name] \
+--home ~/.tmp-evmosd \
 --keyring-backend test
 ```
 
 For more about the available key commands, use the `--help` flag
 
 ```bash
-hyperpaxd keys -h
+evmosd keys -h
 ```
 
 :::tip
@@ -168,8 +173,8 @@ For more information about the Keyring and its backend options, click [here](../
 
 ### Interact with a Network
 
-You can use hyperpaxd to query information or submit transactions on the blockchain. Queries and transactions are requests
- that you send to an Paxeer Network node through the Tendermint RPC.
+You can use evmosd to query information or submit transactions on the blockchain. Queries and transactions are requests
+ that you send to an HyperPaxeer node through the Tendermint RPC.
 
 :::tip
 👉 To use the CLI, you will need to provide a Tendermint RPC address for the `--node` flag.
@@ -181,8 +186,8 @@ Look for a publicly available addresses for testnet and mainnet in the [Networks
 In the local setup the node is set to `tcp://localhost:26657`. You can view your node configuration with:
 
 ```bash
-hyperpaxd config \
---home ~/.tmp-hyperpaxd
+evmosd config \
+--home ~/.tmp-evmosd
 # Example Output
 # {
 # 	"chain-id": "hyperpax_125-1",
@@ -196,20 +201,20 @@ hyperpaxd config \
 You can set your node configuration to send requests to a different network by changing the endpoint with:
 
 ```bash
-hyperpaxd config node [tendermint-rpc-endpoint] \
---home ~/.tmp-hyperpaxd
+evmosd config node [tendermint-rpc-endpoint] \
+--home ~/.tmp-evmosd
 ```
 
 Learn about more node configurations [here](configuration.mdx).
 
 #### Queries
 
-You can query information on the blockchain using `hyperpaxd query` (short `hyperpaxd q`). To view the account balances by its
+You can query information on the blockchain using `evmosd query` (short `evmosd q`). To view the account balances by its
  address stored in the bank module, use:
 
 ```bash
-hyperpaxd q bank balances [adress] \
---home ~/.tmp-hyperpaxd
+evmosd q bank balances [adress] \
+--home ~/.tmp-evmosd
 # # Example Output:
 # balances:
 # - amount: "99999000000000000000002500"
@@ -220,20 +225,20 @@ To view other available query commands, use:
 
 ```bash
 # for all Queries
-hyperpaxd q
+evmosd q
 
 # for querying commands in the bank module
-hyperpaxd q bank
+evmosd q bank
 ```
 
 #### Transactions
 
-You can submit transactions to the network using `hyperpaxd tx`. This creates, signs and broadcasts a tx in one command. To
+You can submit transactions to the network using `evmosd tx`. This creates, signs and broadcasts a tx in one command. To
  send tokens from an account in the keyring to another address with the bank module, use:
 
 ```bash
-hyperpaxd tx bank send [from_key_or_address] [to_address] [amount] \
---home ~/.tmp-hyperpaxd \
+evmosd tx bank send [from_key_or_address] [to_address] [amount] \
+--home ~/.tmp-evmosd \
 --fees 50000000000ahpx \
 -b block
 
@@ -246,11 +251,11 @@ To view other available transaction commands, use:
 
 ```bash
 # for all transaction commands
-hyperpaxd tx
+evmosd tx
 
 # for Bank transaction subcommands
-hyperpaxd tx bank
+evmosd tx bank
 ```
 
-Now that you've learned the basics of how to run and interact with an Paxeer Network network,
+Now that you've learned the basics of how to run and interact with an HyperPaxeer network,
 head over to [configurations](configuration.mdx) for futher customization.

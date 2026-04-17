@@ -62,42 +62,22 @@
       {
         "group": "Develop",
         "pages": [
-          "develop/index"
-        ]
-      },
-      {
-        "group": "Smart Contracts",
-        "pages": [
+          "develop/index",
           "contracts",
           "develop/smart-contracts/index",
           "develop/smart-contracts/custom-improvement-proposals",
-          "develop/smart-contracts/list-evm-extensions"
-        ]
-      },
-      {
-        "group": "EVM Extensions",
-        "pages": [
+          "develop/smart-contracts/list-evm-extensions",
           "develop/smart-contracts/evm-extensions/evm-extensions",
           "develop/smart-contracts/evm-extensions/authorization",
           "develop/smart-contracts/evm-extensions/staking",
           "develop/smart-contracts/evm-extensions/distribution",
           "develop/smart-contracts/evm-extensions/ibc-transfer",
-          "develop/smart-contracts/evm-extensions/vesting"
-        ]
-      },
-      {
-        "group": "APIs & RPC",
-        "pages": [
+          "develop/smart-contracts/evm-extensions/vesting",
           "rpc",
           "openapi",
           "develop/api/index",
           "develop/api/networks",
-          "develop/api/tendermint-rpc"
-        ]
-      },
-      {
-        "group": "Tools & Integrations",
-        "pages": [
+          "develop/api/tendermint-rpc",
           "tools",
           "examples",
           "develop/tools/index",
@@ -106,12 +86,7 @@
           "develop/wallet-integration/index",
           "develop/block-explorers/index",
           "develop/oracles/index",
-          "develop/graphs-indexers/index"
-        ]
-      },
-      {
-        "group": "Guides",
-        "pages": [
+          "develop/graphs-indexers/index",
           "app-developers/guides/building-apps",
           "app-developers/guides/testing-apps"
         ]

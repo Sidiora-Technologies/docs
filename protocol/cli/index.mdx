@@ -5,9 +5,9 @@ description: Command-line tools and node operation guides.
 
 # HyperPaxeer CLI
 
-`evmosd` is the all-in-one command-line interface (CLI). It allows you to run an HyperPaxeer node, manage wallets and interact
- with the HyperPaxeer network through queries and transactions. This introduction will explain how to install the `evmosd`
- binary onto your system and guide you through some simple examples how to use evmosd.
+`hyperpaxd` is the all-in-one command-line interface (CLI). It allows you to run an HyperPaxeer node, manage wallets and interact
+ with the HyperPaxeer network through queries and transactions. This introduction will explain how to install the `hyperpaxd`
+ binary onto your system and guide you through some simple examples how to use hyperpaxd.
 
 ## Prerequisites
 
@@ -37,20 +37,20 @@ jq --version
 ## Installation
 
 You can download the latest binaries from the repo and install them, or 
-you can build and install the `evmosd` binaries from source or using Docker.
+you can build and install the `hyperpaxd` binaries from source or using Docker.
 
 ### Download the binaries
 
 - Go to the [releases section of the repository](https://github.com/Paxeer-Network/Paxeer-Network/releases)
 - Choose the desired release or pre-release you want to install on your machine
 - Select and download from the `Assets` dropdown the corresponding tar or zip file for your OS
-- Extract the files. The `evmosd` binaries is located in the `bin` directory of the extrated files
-- Add the `evmosd` binaries to your path, e.g. you can move it to `$(go env GOPATH)/bin`
+- Extract the files. The `hyperpaxd` binaries is located in the `bin` directory of the extrated files
+- Add the `hyperpaxd` binaries to your path, e.g. you can move it to `$(go env GOPATH)/bin`
 
-After installation is done, check that the `evmosd` binaries have been successfully installed:
+After installation is done, check that the `hyperpaxd` binaries have been successfully installed:
 
 ```bash
-evmosd version
+hyperpaxd version
 ```
 
 ### Build From Source
@@ -66,14 +66,14 @@ git checkout <tag>
 make install
 ```
 
-After installation is done, check that the evmosd binaries have been successfully installed:
+After installation is done, check that the hyperpaxd binaries have been successfully installed:
 
 ```bash
-evmosd version
+hyperpaxd version
 ```
 
 :::info
-If the `evmosd: command not found` error message is returned, confirm that you have configured [Go](#go) correctly.
+If the `hyperpaxd: command not found` error message is returned, confirm that you have configured [Go](#go) correctly.
 :::
 
 ### Docker
@@ -95,7 +95,7 @@ Run the local node by executing the `local_node.sh` script in the base directory
 ./local_node.sh
 ```
 
-The script stores the node configuration including the local default endpoints under `~/.tmp-evmosd/config/config.toml`.
+The script stores the node configuration including the local default endpoints under `~/.tmp-hyperpaxd/config/config.toml`.
 If you have previously run the script, the script allows you to overwrite the existing configuration and start a new
 local node.
 
@@ -110,31 +110,31 @@ Once your node is running you will see it validating and producing blocks in you
 For more information on how to customize a local node,
 head over to the [Single Node](./Paxeer-Network-cli/single-node) page.
 
-## Using `evmosd`
+## Using `hyperpaxd`
 
-After installing the `evmosd` binary, you can run commands using:
+After installing the `hyperpaxd` binary, you can run commands using:
 
 ```bash
-evmosd [command]
+hyperpaxd [command]
 ```
 
 There is also a `-h`, `--help` command available
 
 ```bash
-evmosd -h
+hyperpaxd -h
 ```
 
 It is possible to maintain multiple node configurations at the same time. To specify a configuration use the `--home`
-flag. In the following examples we will be using the default config for a local node, located at `~/.tmp-evmosd`.
+flag. In the following examples we will be using the default config for a local node, located at `~/.tmp-hyperpaxd`.
 
 ### Manage wallets
 
-You can manage your wallets using the evmosd binary to store private keys and sign transactions over CLI. To view all
+You can manage your wallets using the hyperpaxd binary to store private keys and sign transactions over CLI. To view all
 keys use:
 
 ```bash
-evmosd keys list \
---home ~/.tmp-evmosd \
+hyperpaxd keys list \
+--home ~/.tmp-hyperpaxd \
 --keyring-backend test
 
 # Example Output:
@@ -147,8 +147,8 @@ evmosd keys list \
 You can generate a new key/mnemonic with a `$NAME` with:
 
 ```bash
-evmosd keys add [name] \
---home ~/.tmp-evmosd \
+hyperpaxd keys add [name] \
+--home ~/.tmp-hyperpaxd \
 --keyring-backend test
 ```
 
@@ -156,15 +156,15 @@ To export your HyperPaxeer key as an Ethereum private key (for use with [Metamas
  for example):
 
 ```bash
-evmosd keys unsafe-export-eth-key [name] \
---home ~/.tmp-evmosd \
+hyperpaxd keys unsafe-export-eth-key [name] \
+--home ~/.tmp-hyperpaxd \
 --keyring-backend test
 ```
 
 For more about the available key commands, use the `--help` flag
 
 ```bash
-evmosd keys -h
+hyperpaxd keys -h
 ```
 
 :::tip
@@ -173,7 +173,7 @@ For more information about the Keyring and its backend options, click [here](../
 
 ### Interact with a Network
 
-You can use evmosd to query information or submit transactions on the blockchain. Queries and transactions are requests
+You can use hyperpaxd to query information or submit transactions on the blockchain. Queries and transactions are requests
  that you send to an HyperPaxeer node through the Tendermint RPC.
 
 :::tip
@@ -186,8 +186,8 @@ Look for a publicly available addresses for testnet and mainnet in the [Networks
 In the local setup the node is set to `tcp://localhost:26657`. You can view your node configuration with:
 
 ```bash
-evmosd config \
---home ~/.tmp-evmosd
+hyperpaxd config \
+--home ~/.tmp-hyperpaxd
 # Example Output
 # {
 # 	"chain-id": "hyperpax_125-1",
@@ -201,20 +201,20 @@ evmosd config \
 You can set your node configuration to send requests to a different network by changing the endpoint with:
 
 ```bash
-evmosd config node [tendermint-rpc-endpoint] \
---home ~/.tmp-evmosd
+hyperpaxd config node [tendermint-rpc-endpoint] \
+--home ~/.tmp-hyperpaxd
 ```
 
 Learn about more node configurations [here](configuration.mdx).
 
 #### Queries
 
-You can query information on the blockchain using `evmosd query` (short `evmosd q`). To view the account balances by its
+You can query information on the blockchain using `hyperpaxd query` (short `hyperpaxd q`). To view the account balances by its
  address stored in the bank module, use:
 
 ```bash
-evmosd q bank balances [adress] \
---home ~/.tmp-evmosd
+hyperpaxd q bank balances [adress] \
+--home ~/.tmp-hyperpaxd
 # # Example Output:
 # balances:
 # - amount: "99999000000000000000002500"
@@ -225,20 +225,20 @@ To view other available query commands, use:
 
 ```bash
 # for all Queries
-evmosd q
+hyperpaxd q
 
 # for querying commands in the bank module
-evmosd q bank
+hyperpaxd q bank
 ```
 
 #### Transactions
 
-You can submit transactions to the network using `evmosd tx`. This creates, signs and broadcasts a tx in one command. To
+You can submit transactions to the network using `hyperpaxd tx`. This creates, signs and broadcasts a tx in one command. To
  send tokens from an account in the keyring to another address with the bank module, use:
 
 ```bash
-evmosd tx bank send [from_key_or_address] [to_address] [amount] \
---home ~/.tmp-evmosd \
+hyperpaxd tx bank send [from_key_or_address] [to_address] [amount] \
+--home ~/.tmp-hyperpaxd \
 --fees 50000000000ahpx \
 -b block
 
@@ -251,10 +251,10 @@ To view other available transaction commands, use:
 
 ```bash
 # for all transaction commands
-evmosd tx
+hyperpaxd tx
 
 # for Bank transaction subcommands
-evmosd tx bank
+hyperpaxd tx bank
 ```
 
 Now that you've learned the basics of how to run and interact with an HyperPaxeer network,

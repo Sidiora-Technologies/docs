@@ -117,7 +117,7 @@ const baseFee = 1000000000;         // 1 gwei
 const priorityFee = 1000000000;     // 1 gwei
 
 const totalFee = gasUsed * (baseFee + priorityFee);
-// = 21000 × 2 gwei = 42,000 gwei = 0.000042 PAX
+// = 21000 × 2 gwei = 42,000 gwei = 0.000042 HPX
 ```
 
 ### Example 2: Contract Interaction
@@ -128,7 +128,7 @@ const baseFee = 1000000000;         // 1 gwei
 const priorityFee = 2000000000;     // 2 gwei (higher priority)
 
 const totalFee = gasUsed * (baseFee + priorityFee);
-// = 150000 × 3 gwei = 450,000 gwei = 0.00045 PAX
+// = 150000 × 3 gwei = 450,000 gwei = 0.00045 HPX
 ```
 
 ## Estimating Transaction Costs
@@ -153,7 +153,7 @@ const totalFee = gasUsed * (baseFee + priorityFee);
       
       console.log('Estimated gas:', gasEstimate.toString());
       console.log('Max fee per gas:', ethers.formatUnits(maxFee, 'gwei'), 'gwei');
-      console.log('Estimated cost:', ethers.formatEther(estimatedCost), 'PAX');
+      console.log('Estimated cost:', ethers.formatEther(estimatedCost), 'HPX');
       
       return estimatedCost;
     }
@@ -224,7 +224,7 @@ const totalFee = gasUsed * (baseFee + priorityFee);
         <div>
           <p>Estimated Gas: {gasEstimate?.toString()}</p>
           <p>Gas Price: {gasPrice?.toString()}</p>
-          <p>Estimated Cost: {formatEther(estimatedCost)} PAX</p>
+          <p>Estimated Cost: {formatEther(estimatedCost)} HPX</p>
         </div>
       );
     }
@@ -343,7 +343,7 @@ HyperPaxeer uses EIP-1559 with these parameters:
 | Parameter | Value | Description |
 |-----------|-------|-------------|
 | Block Gas Limit | 30,000,000 | Maximum gas per block |
-| Block Time | ~2 seconds | Target block production time |
+| Block Time | 277 ms average | Official reported average block production time |
 | Base Fee Max Change | 12.5% | Maximum base fee change per block |
 | Elasticity Multiplier | 2 | Block gas target multiplier |
 
@@ -386,10 +386,10 @@ uint256 currentBaseFee = oracle.baseFee();
   </Accordion>
 
   <Accordion title="Insufficient Funds" icon="wallet">
-    Account doesn't have enough PAX to cover gas costs:
+    Account doesn't have enough HPX to cover gas costs:
     
     **Solution:**
-    - Ensure account has sufficient PAX balance
+    - Ensure account has sufficient HPX balance
     - Remember: required balance = (gas limit × max fee per gas) + value
   </Accordion>
 </AccordionGroup>
@@ -426,4 +426,3 @@ uint256 currentBaseFee = oracle.baseFee();
     Fix common transaction issues
   </Card>
 </CardGroup>
-

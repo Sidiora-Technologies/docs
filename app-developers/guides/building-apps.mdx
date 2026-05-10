@@ -26,9 +26,9 @@ https://public-rpc.paxeer.app/rpc
 |-----------|-------|
 | Network Name | HyperPaxeer |
 | Chain ID | 125 |
-| Currency | PAX |
+| Currency | HPX |
 | RPC URL | https://public-rpc.paxeer.app/rpc |
-| Block Explorer | https://paxscan.paxeer.app |
+| Block Explorer | https://paxscan.io |
 
 ## Development Workflow
 
@@ -131,7 +131,7 @@ https://public-rpc.paxeer.app/rpc
   </Step>
 
   <Step title="Verify Contract">
-    Verify your contract on PaxeerScan:
+    Verify your contract on PaxScan:
     
     ```bash
     # Hardhat
@@ -300,7 +300,7 @@ function MyComponent() {
     Follow this testing progression:
     
     1. **Local network** - Fast iteration, rich debugging
-    2. **Testnet** - Real network conditions
+    2. **Private fork or staging stack** - Realistic integration conditions
     3. **Mainnet** - Production deployment
     
     ```javascript
@@ -318,7 +318,7 @@ function MyComponent() {
   </Accordion>
 
   <Accordion title="Verify Your Contracts" icon="badge-check">
-    Always verify contracts on PaxeerScan:
+    Always verify contracts on PaxScan:
     
     Benefits:
     - Users can read contract source
@@ -385,7 +385,7 @@ While HyperPaxeer is EVM equivalent, there are a few minor differences:
 <AccordionGroup>
   <Accordion title="Block Time" icon="clock">
     - **Ethereum:** ~12 seconds
-    - **HyperPaxeer:** ~2 seconds
+    - **HyperPaxeer:** 277 ms average
     
     Impact: Faster confirmations, more frequent events
   </Accordion>
@@ -730,7 +730,7 @@ export default function Home() {
   <Card
     title="Block Explorer"
     icon="magnifying-glass"
-    href="https://paxscan.paxeer.app"
+    href="https://paxscan.io"
   >
     Verify contracts and track transactions
   </Card>
@@ -739,12 +739,12 @@ export default function Home() {
     icon="faucet"
     href="https://faucet.paxeer.app"
   >
-    Get test PAX tokens
+    Get test HPX tokens
   </Card>
   <Card
     title="Gas Tracker"
     icon="gas-pump"
-    href="https://paxscan.paxeer.app/gas-tracker"
+    href="https://paxscan.io/gas-tracker"
   >
     Monitor current gas prices
   </Card>
@@ -815,4 +815,3 @@ export default function Home() {
     Explore development tools
   </Card>
 </CardGroup>
-

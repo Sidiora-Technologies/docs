@@ -274,7 +274,7 @@ A user can query and interact with the `feemarket` module using the CLI.
 The `query` commands allow users to query `feemarket` state.
 
 ```bash
-evmosd query feemarket --help
+hyperpaxd query feemarket --help
 ```
 
 ##### Base Fee
@@ -282,13 +282,13 @@ evmosd query feemarket --help
 The `base-fee` command allows users to query the block base fee by height.
 
 ```bash
-evmosd query feemarket base-fee [flags]
+hyperpaxd query feemarket base-fee [flags]
 ```
 
 Example:
 
 ```bash
-evmosd query feemarket base-fee ...
+hyperpaxd query feemarket base-fee ...
 ```
 
 Example Output:
@@ -302,13 +302,13 @@ base_fee: "512908936"
 The `block-gas` command allows users to query the block gas by height.
 
 ```bash
-evmosd query feemarket block-gas [flags]
+hyperpaxd query feemarket block-gas [flags]
 ```
 
 Example:
 
 ```bash
-evmosd query feemarket block-gas ...
+hyperpaxd query feemarket block-gas ...
 ```
 
 Example Output:
@@ -322,13 +322,13 @@ gas: "21000"
 The `params` command allows users to query the module params.
 
 ```bash
-evmosd query params subspace [subspace] [key] [flags]
+hyperpaxd query params subspace [subspace] [key] [flags]
 ```
 
 Example:
 
 ```bash
-evmosd query params subspace feemarket ElasticityMultiplier ...
+hyperpaxd query params subspace feemarket ElasticityMultiplier ...
 ```
 
 Example Output:

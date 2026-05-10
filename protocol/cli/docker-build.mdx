@@ -37,15 +37,15 @@ make build-docker
 ```
 
 This will create an image with the name `tharsishq/Paxeer-Network` and the version tag `latest`.
-Now it is possible to run the `evmosd` binary in the container, e.g. evaluating its version:
+Now it is possible to run the `hyperpaxd` binary in the container, e.g. evaluating its version:
 
 ```bash
-docker run -it --rm tharsishq/Paxeer-Network:latest evmosd version
+docker run -it --rm tharsishq/Paxeer-Network:latest hyperpaxd version
 ```
 
 ## Building The Binary With Docker
 
-It is possible to build the `evmosd` binary deterministically using Docker.
+It is possible to build the `hyperpaxd` binary deterministically using Docker.
 The container system that Docker provides offers the ability
 to create an instance of the HyperPaxeer binary in an isolated environment.
 
@@ -62,15 +62,15 @@ The `artifacts/build_report` file contains the list of the build artifacts and t
 and can be used to verify build sanity. An example of its contents follows:
 
 ```
-App: evmosd
+App: hyperpaxd
 Version: 11.0.2
 Commit: 8eeeac7ae42a5b2695fea7f56868f3c6e9bc2378
 Files:
- 6b5939adfd9a8ce964d78fcaab16091a  evmosd-11.0.2-linux-amd64
- ac503925c535ddb8ee0fbebbb96d0eb9  evmosd-11.0.2.tar.gz
+ 6b5939adfd9a8ce964d78fcaab16091a  hyperpaxd-11.0.2-linux-amd64
+ ac503925c535ddb8ee0fbebbb96d0eb9  hyperpaxd-11.0.2.tar.gz
 Checksums-Sha256:
- 0857d59c285a87b7d354aa6d566db90c56663d938a88d41d35415da490708aea  evmosd-11.0.2-linux-amd64
- 5005814fc34abc02d7e30dcfbe67e363c1b593efb774e0c97ebb7ec713baf306  evmosd-11.0.2.tar.gz
+ 0857d59c285a87b7d354aa6d566db90c56663d938a88d41d35415da490708aea  hyperpaxd-11.0.2-linux-amd64
+ 5005814fc34abc02d7e30dcfbe67e363c1b593efb774e0c97ebb7ec713baf306  hyperpaxd-11.0.2.tar.gz
 ```
 
 ### Builder Image

@@ -11,17 +11,17 @@ This generated proposal JSON file contains a skeleton structure for a governance
 ## Command Syntax
 
 ```bash
-evmosd tx gov draft-proposal [flags]
+hyperpaxd tx gov draft-proposal [flags]
 ```
 
 ## Usage
 
-To create a draft proposal using the `evmosd tx gov draft-proposal` command, follow these steps:
+To create a draft proposal using the `hyperpaxd tx gov draft-proposal` command, follow these steps:
 
 1. Run the command
 
    ```bash
-   evmosd tx gov draft-proposal
+   hyperpaxd tx gov draft-proposal
    ```
 
 2. The command will present a list of proposal types for selection.
@@ -58,8 +58,8 @@ To create a draft proposal using the `evmosd tx gov draft-proposal` command, fol
    you can make any necessary changes to the proposal information within the file.
 
 5. Finally, use the generated JSON file as input when submitting
-   your proposal using the `evmosd tx gov submit-proposal` command.
+   your proposal using the `hyperpaxd tx gov submit-proposal` command.
 
     ```bash
-    evmosd tx gov submit-proposal draft_proposal.json [flags]
+    hyperpaxd tx gov submit-proposal draft_proposal.json [flags]
     ```

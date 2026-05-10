@@ -419,8 +419,8 @@ A user can query the HyperPaxeer `x/vesting` module using the CLI, gRPC, or RES
 
 ### CLI
 
-Find below a list of `evmosd` commands added with the `x/vesting` module.
-You can obtain the full list by using the `evmosd -h` command.
+Find below a list of `hyperpaxd` commands added with the `x/vesting` module.
+You can obtain the full list by using the `hyperpaxd -h` command.
 
 #### Genesis
 
@@ -440,7 +440,7 @@ Only vested coins may be staked.
 For an example of how to set this see [this link](https://github.com/Paxeer-Network/Paxeer-Network/pull/303).
 
 ```go
-evmosd add-genesis-account ADDRESS_OR_KEY_NAME COIN... [flags]
+hyperpaxd add-genesis-account ADDRESS_OR_KEY_NAME COIN... [flags]
 ```
 
 #### Queries
@@ -452,7 +452,7 @@ The `query` commands allow users to query `vesting` account state.
 Allows users to query the locked, unvested and vested tokens for a given vesting account
 
 ```go
-evmosd query vesting balances ADDRESS [flags]
+hyperpaxd query vesting balances ADDRESS [flags]
 ```
 
 #### Transactions
@@ -468,7 +468,7 @@ and has to do so using the fund-vesting-account subcommand.
 Clawback via governance is enabled or disabled through the second argument.
 
 ```go
-evmosd tx vesting create-clawback-vesting-account FUNDER_ADDRESS ENABLE_GOV_CLAWBACK --from=VESTING_ADDRESS [flags]
+hyperpaxd tx vesting create-clawback-vesting-account FUNDER_ADDRESS ENABLE_GOV_CLAWBACK --from=VESTING_ADDRESS [flags]
 ```
 
 **`fund-vesting-account`**
@@ -486,7 +486,7 @@ Only vested coins may be staked.
 For an example of how to set this see [this link](https://github.com/Paxeer-Network/Paxeer-Network/pull/303).
 
 ```go
-evmosd tx vesting fund-vesting-account VESTING_ADDRESS --from=FUNDER_ADDRESS [flags]
+hyperpaxd tx vesting fund-vesting-account VESTING_ADDRESS --from=FUNDER_ADDRESS [flags]
 ```
 
 **`clawback`**
@@ -498,7 +498,7 @@ Delegated or unbonding staking tokens will be transferred in the delegated or un
 The recipient is vulnerable to slashing, and must act to unbond the tokens if desired.
 
 ```go
-evmosd tx vesting clawback VESTING_ADDRESS --from=FUNDER_ADDRESS [flags]
+hyperpaxd tx vesting clawback VESTING_ADDRESS --from=FUNDER_ADDRESS [flags]
 ```
 
 **`update-vesting-funder`**
@@ -507,7 +507,7 @@ Allows users to update the funder of an existent `ClawbackVestingAccount`.
 Must be requested by the original funder address (`--from`).
 
 ```go
-evmosd tx vesting update-vesting-funder VESTING_ADDRESS NEW_FUNDER_ADDRESS --from=FUNDER_ADDRESS [flags]
+hyperpaxd tx vesting update-vesting-funder VESTING_ADDRESS NEW_FUNDER_ADDRESS --from=FUNDER_ADDRESS [flags]
 ```
 
 **`convert`**
@@ -516,7 +516,7 @@ Allows users to convert their vesting account to the chain's default account (i.
 This operation only succeeds if there are no unvested tokens left in the account.
 
 ```go
-evmosd tx vesting convert VESTING_ADDRESS [flags]
+hyperpaxd tx vesting convert VESTING_ADDRESS [flags]
 ```
 
 ### gRPC

@@ -5,14 +5,14 @@
 # Alternative databases
 
 To use a different database than the default one (levelDB),
-you may need to build the `evmosd` binary manually with specific flags and configurations.
+you may need to build the `hyperpaxd` binary manually with specific flags and configurations.
 
 Learn about the different options supported.
 
 ## Prerequisites
 
 - Golang version `>=1.22.2` ([installation guide](https://go.dev/doc/install))
-- [Source code of the desired `evmosd`](https://github.com/Paxeer-Network/Paxeer-Network) version.
+- [Source code of the desired `hyperpaxd`](https://github.com/Paxeer-Network/Paxeer-Network) version.
   For example, if you want to use `v19.0.0`, execute the following command to download only the necessary code:
 
   ```bash
@@ -21,7 +21,7 @@ Learn about the different options supported.
 
 ## Pebble DB
 
-### Install `evmosd` binary from source
+### Install `hyperpaxd` binary from source
 
 ```bash
 # compile and install the binary
@@ -31,7 +31,7 @@ COSMOS_BUILD_OPTIONS=pebbledb make install
 Check the binary version has the `-pebbledb` suffix
 
 ```bash
-❯ evmosd version
+❯ hyperpaxd version
 v19.0.0-pebbledb
 ```
 
@@ -65,7 +65,7 @@ db_backend = "pebbledb"
 
 ### Build docker image
 
-To build a docker image with the `evmosd` binary compiled
+To build a docker image with the `hyperpaxd` binary compiled
 to use pebbledb, run the following command:
 
 ```
@@ -169,7 +169,7 @@ git clone -b v9.2.1 --single-branch https://github.com/facebook/rocksdb
 cd rocksdb
 
 # take note of the path where you have the rocksdb code
-# you will need this for building the evmosd binary
+# you will need this for building the hyperpaxd binary
 PATH_TO_ROCKSDB=$(pwd)
 
 # install librocksdb
@@ -182,9 +182,9 @@ make static_lib
 
 The installation process may take several minutes.
 
-### Install `evmosd` binary
+### Install `hyperpaxd` binary
 
-Once this completes, install the `evmosd` binary with rocksDB support
+Once this completes, install the `hyperpaxd` binary with rocksDB support
 
 ```bash
 # cd into the directory where the HyperPaxeer source code is
@@ -219,7 +219,7 @@ make install
 Check the binary version has the `-rocksdb` suffix
 
 ```bash
-❯ evmosd version
+❯ hyperpaxd version
 v19.0.0-rocksdb
 ```
 
@@ -254,7 +254,7 @@ For more information about it, refer to these resources:
 
 #### Prerequisites
 
-- `evmosd` binary with `librocksdb`. Refer to [the previous section](#rocks-db) for the procedure on how to build this binary.
+- `hyperpaxd` binary with `librocksdb`. Refer to [the previous section](#rocks-db) for the procedure on how to build this binary.
 
 #### Update configuration
 
@@ -281,7 +281,7 @@ For more information about it, check [the documentation](https://github.com/cryp
 
 #### Prerequisites
 
-- `evmosd` binary with `librocksdb`. Refer to [the RocksDB section](#rocks-db) for the procedure on how to build this binary.
+- `hyperpaxd` binary with `librocksdb`. Refer to [the RocksDB section](#rocks-db) for the procedure on how to build this binary.
 
 #### Update configuration
 

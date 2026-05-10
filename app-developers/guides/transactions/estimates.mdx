@@ -163,8 +163,8 @@ executionGasFee = gasUsed × (baseFee + priorityFee)
       return {
         gasEstimate: gasEstimate.toString(),
         maxFeePerGas: ethers.formatUnits(feeData.maxFeePerGas, 'gwei'),
-        maxCostPAX: ethers.formatEther(maxCost),
-        likelyCostPAX: ethers.formatEther(likelyCost),
+        maxCostHPX: ethers.formatEther(maxCost),
+        likelyCostHPX: ethers.formatEther(likelyCost),
       };
     }
 
@@ -219,8 +219,8 @@ async function estimateTokenTransfer(
       baseFee: ethers.formatUnits(currentBaseFee, 'gwei') + ' gwei',
       priorityFee: ethers.formatUnits(priorityFee, 'gwei') + ' gwei',
       maxFeePerGas: ethers.formatUnits(feeData.maxFeePerGas, 'gwei') + ' gwei',
-      maxCostPAX: ethers.formatEther(maxCost),
-      likelyCostPAX: ethers.formatEther(likelyCost),
+      maxCostHPX: ethers.formatEther(maxCost),
+      likelyCostHPX: ethers.formatEther(likelyCost),
     };
   } catch (error) {
     console.error('Estimation failed:', error);
@@ -266,7 +266,7 @@ export function useEstimateCost(tx: any) {
           gas: gasEstimate.toString(),
           gasPrice: gasPrice.toString(),
           costWei: cost.toString(),
-          costPAX: formatEther(cost),
+          costHPX: formatEther(cost),
         });
       } catch (error) {
         console.error('Cost estimation failed:', error);
@@ -361,14 +361,14 @@ async function analyzeFeeTrends() {
   <Card
     title="Gas Tracker"
     icon="chart-line"
-    href="https://paxscan.paxeer.app/stats"
+    href="https://paxscan.io/stats"
   >
     Monitor current gas prices
   </Card>
   <Card
     title="Fee Calculator"
     icon="calculator"
-    href="https://paxscan.paxeer.app/gas-tracker"
+    href="https://paxscan.io/gas-tracker"
   >
     Calculate transaction costs
   </Card>

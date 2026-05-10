@@ -131,10 +131,10 @@ Cosmos `sdk.AccAddress`.
 
 ### Address conversion
 
-The `evmosd debug addr <address>` can be used to convert an address between hex and bech32 formats. For example:
+The `hyperpaxd debug addr <address>` can be used to convert an address between hex and bech32 formats. For example:
 
 ```bash title="Bech32"
- $ evmosd debug addr pax1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw
+ $ hyperpaxd debug addr pax1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw
   Address: [20 87 74 109 255 45 223 158 7 130 139 67 69 211 4 9 25 175 86 82]
   Address (hex): 14574A6DFF2DDF9E07828B4345D3040919AF5652
   Bech32 Acc: pax1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw
@@ -142,7 +142,7 @@ The `evmosd debug addr <address>` can be used to convert an address between hex 
 ```
 
 ```bash title="Hex"
- $ evmosd debug addr 14574A6DFF2DDF9E07828B4345D3040919AF5652
+ $ hyperpaxd debug addr 14574A6DFF2DDF9E07828B4345D3040919AF5652
   Address: [20 87 74 109 255 45 223 158 7 130 139 67 69 211 4 9 25 175 86 82]
   Address (hex): 14574A6DFF2DDF9E07828B4345D3040919AF5652
   Bech32 Acc: pax1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw
@@ -152,14 +152,14 @@ The `evmosd debug addr <address>` can be used to convert an address between hex 
 ### Key output
 
 :::tip
-The Cosmos SDK Keyring output (i.e `evmosd keys`) only supports addresses and public keys in Bech32 format.
+The Cosmos SDK Keyring output (i.e `hyperpaxd keys`) only supports addresses and public keys in Bech32 format.
 :::
 
-We can use the `keys show` command of `evmosd` with the flag `--bech <type> (acc|val|cons)` to
+We can use the `keys show` command of `hyperpaxd` with the flag `--bech <type> (acc|val|cons)` to
 obtain the addresses and keys as mentioned above,
 
 ```bash title="Accounts"
- $ evmosd keys show dev0 --bech acc
+ $ hyperpaxd keys show dev0 --bech acc
 - name: dev0
   type: local
   address: pax1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw
@@ -168,7 +168,7 @@ obtain the addresses and keys as mentioned above,
 ```
 
 ```bash title="Validator"
- $ evmosd keys show dev0 --bech val
+ $ hyperpaxd keys show dev0 --bech val
 - name: dev0
   type: local
   address: paxvaloper1z3t55m0l9h0eupuz3dp5t5cypyv674jjn4d6nn
@@ -177,7 +177,7 @@ obtain the addresses and keys as mentioned above,
 ```
 
 ```bash title="Consensus"
- $ evmosd keys show dev0 --bech cons
+ $ hyperpaxd keys show dev0 --bech cons
 - name: dev0
   type: local
   address: paxvalcons1rllqa5d97n6zyjhy6cnscc7zu30zjn3f7wyj2n
@@ -193,7 +193,7 @@ You can query an account address using the CLI, gRPC or
 
 ```bash
 # NOTE: the --output (-o) flag will define the output format in JSON or YAML (text)
-evmosd q auth account $(evmosd keys show dev0 -a) -o text
+hyperpaxd q auth account $(hyperpaxd keys show dev0 -a) -o text
 
 '@type': /hyperpaxeer.types.v1.EthAccount
 base_account:

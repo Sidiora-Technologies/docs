@@ -10,7 +10,7 @@ HyperPaxeer is a capital orchestration network built as part of the Alexandria F
 It is built using the [Cosmos SDK](https://github.com/cosmos/cosmos-sdk/)
 which runs on top of the [CometBFT](https://github.com/cometbft/cometbft)
 consensus engine, providing full Ethereum compatibility and interoperability
-with fast finality, high transaction throughput and short block times (~2 seconds).
+with instant deterministic finality and sub-second block production.
 
 ## Network Information
 
@@ -18,12 +18,13 @@ with fast finality, high transaction throughput and short block times (~2 second
 |-----------|-------|
 | Chain ID (Cosmos) | `hyperpax_125-1` |
 | EVM Chain ID | `125` |
-| Token Symbol | `PAX` |
+| Token Symbol | `HPX` / `hpx` |
 | Base Denomination | `ahpx` |
 | Display Denomination | `hpx` |
+| Decimals | `18` |
 | Bech32 Prefix | `pax` |
-| RPC Endpoint | `https://mainnet-beta.rpc.hyperpaxeer.com/rpc` |
-| Block Explorer | [paxscan.paxeer.app](https://paxscan.paxeer.app) |
+| RPC Endpoint | `https://public-rpc.paxeer.app/rpc` |
+| Block Explorer | [paxscan.io](https://paxscan.io) |
 
 This architecture allows users to perform both Cosmos and EVM formatted transactions,
 developers to scale EVM dApps cross-chain via [IBC](https://cosmos.network/ibc),

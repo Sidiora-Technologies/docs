@@ -49,8 +49,8 @@ Deploy and interact with smart contracts on HyperPaxeer (Chain ID `125`). Foundr
             network: "hyperpaxeer",
             chainId: 125,
             urls: {
-              apiURL: "https://paxscan.paxeer.app/api",
-              browserURL: "https://paxscan.paxeer.app"
+              apiURL: "https://paxscan.io/api",
+              browserURL: "https://paxscan.io"
             }
           }
         ]
@@ -98,7 +98,7 @@ Deploy and interact with smart contracts on HyperPaxeer (Chain ID `125`). Foundr
     ```
 
     <Tip>
-    Use `--verify` flag to verify your contract on PaxeerScan after deployment.
+    Use `--verify` flag to verify your contract on PaxScan after deployment.
     </Tip>
   </Tab>
 
@@ -195,7 +195,7 @@ contract MyToken is ERC20 {
 
 ## Verifying Contracts
 
-After deployment, verify your contract on PaxeerScan for transparency and easier interaction.
+After deployment, verify your contract on PaxScan for transparency and easier interaction.
 
 ### Using Hardhat
 
@@ -286,7 +286,7 @@ function transfer() {
 
   <Accordion title="Testing">
     - Write comprehensive unit tests
-    - Test on testnet before mainnet
+    - Test locally or on private networks before mainnet
     - Test edge cases and failure scenarios
     - Use fuzzing for complex contracts
   </Accordion>
@@ -299,8 +299,8 @@ function transfer() {
 | Network Name | HyperPaxeer |
 | RPC URL | `https://public-rpc.paxeer.app/rpc` |
 | Chain ID | `125` |
-| Currency | PAX (`ahpx`) |
-| Block Explorer | `https://paxscan.paxeer.app` |
+| Currency | HPX (`ahpx`, 18 decimals) |
+| Block Explorer | `https://paxscan.io` |
 
 ## Next Steps
 

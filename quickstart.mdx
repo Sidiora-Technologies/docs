@@ -17,8 +17,8 @@ HyperPaxeer is a standard EVM chain (Chain ID `125`). Any Ethereum-compatible wa
     | Network Name | `HyperPaxeer` |
     | RPC URL | `https://public-rpc.paxeer.app/rpc` |
     | Chain ID | `125` |
-    | Currency Symbol | `PAX` |
-    | Block Explorer | `https://paxscan.paxeer.app` |
+    | Currency Symbol | `HPX` |
+    | Block Explorer | `https://paxscan.io` |
   </Accordion>
   
   <Accordion title="PaxPort Wallet" icon="shield-check">
@@ -119,7 +119,7 @@ Store private keys in a `.env` file and never commit them to version control.
 
 ---
 
-## 4. Verify on PaxeerScan
+## 4. Verify on PaxScan
 
 ```bash
 forge verify-contract \
@@ -128,7 +128,7 @@ forge verify-contract \
   DEPLOYED_ADDRESS \
   src/Counter.sol:Counter \
   --verifier blockscout \
-  --verifier-url https://paxscan.paxeer.app/api
+  --verifier-url https://paxscan.io/api
 ```
 
 ---
@@ -143,12 +143,12 @@ export const hyperpaxeer = defineChain({
   id: 125,
   name: 'HyperPaxeer',
   network: 'hyperpaxeer',
-  nativeCurrency: { decimals: 18, name: 'PAX', symbol: 'PAX' },
+  nativeCurrency: { decimals: 18, name: 'HyperPaxeer', symbol: 'HPX' },
   rpcUrls: {
     default: { http: ['https://public-rpc.paxeer.app/rpc'] },
   },
   blockExplorers: {
-    default: { name: 'PaxeerScan', url: 'https://paxscan.paxeer.app' },
+    default: { name: 'PaxScan', url: 'https://paxscan.io' },
   },
 })
 

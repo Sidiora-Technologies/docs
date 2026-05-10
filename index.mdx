@@ -1,25 +1,25 @@
 ---
 title: "Paxeer Network"
-description: "Developer documentation for Paxeer Network — Alexandria Fork, HyperPaxeer version, Hyperpax-OS Cronos runtime"
+description: "Developer documentation for Paxeer Network — Alexandria Fork, HyperPaxeer runtime, Argus VM, and network-operated protocols"
 ---
 
 <Note>
-**Chain ID:** `125` | **Cosmos:** `hyperpax_125-1` | **Token:** PAX (`ahpx`) | **Bech32:** `pax` | **Block time:** ~200 ms median | **Binary:** `Hyperpax-OS Cronos`
+**Chain ID:** `125` | **Cosmos:** `hyperpax_125-1` | **Token:** HPX (`ahpx`, 18 decimals) | **Bech32:** `pax` | **Block time:** 277 ms average | **Binary:** `hyperpaxd_2.0.3`
 </Note>
 
 ## The Network
 
-HyperPaxeer is a sovereign Proof-of-Stake blockchain purpose-built for capital orchestration. Running on the **Alexandria Fork**, it pairs a production EVM execution layer with the **Argus Virtual Machine (AVM)** — a C++ register-based runtime that handles risk, capital allocation, and funded smart-wallet management. Twelve validators and 30 RPC/full nodes span 15 regions worldwide, producing blocks at a median cadence of 201 ms.
+HyperPaxeer is a sovereign Proof-of-Stake blockchain purpose-built for capital orchestration. Running on the **Alexandria Fork**, it pairs a production EVM execution layer with the **Argus Virtual Machine (AVM)** — a C++ register-based runtime that handles risk, capital allocation, and funded smart-wallet management. The April 2026 performance report shows 10 active validators, 48 RPC nodes, 14 active regions, and 277 ms average block production.
 
 <CardGroup cols={3}>
-  <Card title="4.5 M+ Blocks" icon="cube">
-    Genesis to present, zero chain halts
+  <Card title="5.25 M+ Blocks" icon="cube">
+    Genesis-to-report mainnet history
   </Card>
-  <Card title="30 Nodes / 15 Regions" icon="globe">
-    Tokyo, Seoul, Singapore, Sydney, Mumbai, Chicago, Dallas, Toronto, Vancouver, Stockholm, Helsinki, Oslo, Madrid, Milan, Sao Paulo
+  <Card title="48 RPC Nodes" icon="globe">
+    47 EVM RPC nodes online across 14 active regions
   </Card>
-  <Card title="~200 ms Blocks" icon="bolt">
-    Median block time measured across 50-block sample (p95 = 302 ms)
+  <Card title="277 ms Blocks" icon="bolt">
+    Official average block time with 341 ms p95
   </Card>
 </CardGroup>
 
@@ -74,7 +74,7 @@ The **EVM OS** is the blockchain shell — consensus, networking, smart-contract
     icon="server"
     href="/validate/setup/run-a-validator"
   >
-    Deploy RPC or Validator nodes via the hpx CLI
+    Deploy RPC or Validator nodes with HyperPaxeer tooling
   </Card>
 </CardGroup>
 
@@ -93,7 +93,7 @@ The **EVM OS** is the blockchain shell — consensus, networking, smart-contract
   <Card
     title="Custom Precompiles"
     icon="bolt"
-    href="/concepts/architecture/overview"
+    href="/paxspot/precompiles"
   >
     Four stateful/stateless precompiles at 0x901–0x904 — OROB resolution, batch clearing, oracle aggregation, PoFQ scoring
   </Card>
@@ -107,7 +107,7 @@ The **EVM OS** is the blockchain shell — consensus, networking, smart-contract
   <Card
     title="x/paxoracle Module"
     icon="database"
-    href="/protocol/modules/index"
+    href="/protocol/modules/paxoracle"
   >
     Cosmos SDK module for validator-submitted price feeds with confidence-weighted median aggregation
   </Card>
@@ -126,39 +126,39 @@ The **EVM OS** is the blockchain shell — consensus, networking, smart-contract
     On-chain spot exchange with Oracle-Relative Order Book (OROB), dual-mode matching, lazy-netting settlement, and capital-integrated trading
   </Card>
   <Card
-    title="Sidiora DEX (v5-ASAMM)"
+    title="HyperPax DEX"
     icon="arrow-right-arrow-left"
-    href="/sidiora-dex"
+    href="/sidiora/dex"
   >
     Adaptive Sigmoid AMM — tanh bonding curve, progressive quadratic fees, LP loyalty rewards, oracle-pegged pools, Diamond Standard upgradeability
   </Card>
   <Card
-    title="ChainFlow"
+    title="HyperPax Perps"
     icon="chart-line"
-    href="/chainflow"
+    href="/sidiora/perps"
   >
-    Trustless prop-trading platform — on-chain evaluation, soulbound reputation NFTs, automated 80/20 profit distribution
+    Network-operated perpetual futures protocol with Diamond facets, on-chain order book, and oracle pricing
   </Card>
   <Card
-    title="Computable Token Machine"
-    icon="puzzle-piece"
-    href="/ctm"
+    title="Sidiora.fun"
+    icon="rocket"
+    href="/sidiora/fun"
   >
-    EIP-2535 Diamond token standard — tokens that are modular execution environments with infinite extensibility
+    Launchpad AMM with virtual USDL reserves, per-pool Beacon proxies, and Opticals
   </Card>
   <Card
-    title="Lending Protocol"
-    icon="coins"
-    href="/lending"
+    title="Sidiora.ag"
+    icon="route"
+    href="/sidiora/ag"
   >
-    Dynamic-APY lending with on-chain credit scoring (300–850 range) and multi-asset support
+    Meta-AG routing layer for Paxeer liquidity, adapters, quotes, and execution tracking
   </Card>
   <Card
     title="BlockScout API"
     icon="magnifying-glass"
     href="/blockscout-api"
   >
-    REST API for querying transactions, blocks, addresses, and tokens on PaxeerScan
+    REST API for querying transactions, blocks, addresses, and tokens on PaxScan
   </Card>
 </CardGroup>
 
@@ -172,12 +172,14 @@ The **EVM OS** is the blockchain shell — consensus, networking, smart-contract
   "rpcUrl": "https://public-rpc.paxeer.app/rpc",
   "chainId": 125,
   "cosmosChainId": "hyperpax_125-1",
-  "currencySymbol": "PAX",
+  "currencySymbol": "HPX",
   "baseDenom": "ahpx",
   "displayDenom": "hpx",
+  "decimals": 18,
   "bech32Prefix": "pax",
-  "blockExplorer": "https://paxscan.paxeer.app",
-  "medianBlockTime": "201ms"
+  "blockExplorer": "https://paxscan.io",
+  "averageBlockTime": "277ms",
+  "binary": "hyperpaxd_2.0.3"
 }
 ```
 

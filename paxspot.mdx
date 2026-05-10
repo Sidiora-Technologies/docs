@@ -94,7 +94,7 @@ PaxSpot interfaces with the **Argus VM** for funded smart-wallet trading:
 
 ```
 ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│   ARGUS VM   │────▶│ SMART WALLET │────▶│   PAXSPOT    │
+│   ARGUS VM   │────▶│ SMART WALLET │────▶│   HPXSPOT    │
 │  Risk engine │◀────│ Capital set  │◀────│ PoFQ score   │
 │  Allocation  │     │   by Argus   │     │ PnL feed     │
 │  Drawdown    │     │ Allowance    │     │ Volume data  │
@@ -107,12 +107,12 @@ PaxSpot exposes `IPaxSpotReader` (PoFQ scores, PnL, positions) and enforces per-
 
 ## Contract Architecture
 
-Built with Foundry, Solidity 0.8.24, OpenZeppelin v5.0.1.
+PaxSpot is the exchange architecture layer for HyperPaxeer's spot markets. It relies on native precompiles for oracle-relative pricing, batch clearing, validator oracle aggregation, and fill-quality scoring.
 
 | Contract | Purpose |
 |----------|---------|
 | **PaxSpotRouter** | Order gateway — signature validation, rate limiting, funded-wallet allowance checks |
-| **MatchingEngine** | OROB continuous + batch matching via precompiles 0x901/0x902/0x904 |
+| **MatchingEngine** | OROB continuous + batch matching via precompiles `0x901`, `0x902`, and `0x904` |
 | **SettlementEngine** | Virtual-balance ledger, epoch netting, fast-settle lane |
 | **OracleAdapter** | Pyth primary + Validator Oracle Module (VOM) fallback via precompile 0x903 |
 
@@ -120,10 +120,12 @@ Built with Foundry, Solidity 0.8.24, OpenZeppelin v5.0.1.
 
 | Address | Name | Type | Purpose |
 |---------|------|------|---------|
-| `0x901` | OROBResolver | Stateless | Convert offset orders to absolute prices and back |
-| `0x902` | BatchClearing | Stateless | Compute uniform clearing price for sealed-bid auctions |
-| `0x903` | OracleAggregator | Stateful | Confidence-weighted median of validator-submitted prices (x/paxoracle) |
-| `0x904` | PoFQScorer | Stateless | Score fill quality against oracle at execution time |
+| `0x0000000000000000000000000000000000000901` | OROBResolver | Stateless | Convert offset orders to absolute prices and back |
+| `0x0000000000000000000000000000000000000902` | BatchClearing | Stateless | Compute uniform clearing price for sealed-bid auctions |
+| `0x0000000000000000000000000000000000000903` | OracleAggregator / VOM | Mixed | Confidence-weighted median of validator-submitted prices (`x/paxoracle`) |
+| `0x0000000000000000000000000000000000000904` | PoFQScorer | Stateless | Score fill quality against oracle at execution time |
+
+See the [PaxSpot precompile reference](/paxspot/precompiles) for Solidity and TypeScript examples.
 
 ---
 

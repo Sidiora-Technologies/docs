@@ -10,7 +10,7 @@ Paxeer Network uses a four-layer naming scheme. Each layer changes at a differen
 
 ```
 ┌─────────────────────────────────────────────────┐
-│              PAXEER NETWORK                      │
+│              HPXEER NETWORK                      │
 │              The chain. The ecosystem.           │
 │                                                  │
 │  ┌───────────────────────────────────────────┐   │
@@ -22,8 +22,7 @@ Paxeer Network uses a four-layer naming scheme. Each layer changes at a differen
 │  │  │  Features. Precompiles. Modules.  │    │   │
 │  │  │                                   │    │   │
 │  │  │  ┌───────────────────────────┐    │    │   │
-│  │  │  │  Binary: HYPERPAX-OS      │    │    │   │
-│  │  │  │         CRONOS            │    │    │   │
+│  │  │  │  Binary: hyperpaxd_2.0.3  │    │    │   │
 │  │  │  │  VM. Validator software.  │    │    │   │
 │  │  │  └───────────────────────────┘    │    │   │
 │  │  └───────────────────────────────────┘    │   │
@@ -35,7 +34,7 @@ Paxeer Network uses a four-layer naming scheme. Each layer changes at a differen
 
 ## Layer 0 — Paxeer Network
 
-The chain, the token (PAX), the community. This is the permanent identity that never changes regardless of forks, versions, or binary releases. Everything else is a version *of* Paxeer Network.
+The chain, the native HPX token, and the community. This is the permanent identity that never changes regardless of forks, versions, or binary releases. Everything else is a version *of* Paxeer Network.
 
 ---
 
@@ -82,17 +81,15 @@ Future version names: HyperNexus, HyperForge, HyperPrime, HyperVault.
 
 Binary releases are the actual compiled software that validators and RPC nodes run. They cover VM patches, validator-side optimisations, node infrastructure changes, and bug fixes. Multiple binary releases can ship within a single network version.
 
-**Naming convention:** `Hyperpax-OS` + Greek Titan / Primordial codename.
+**Naming convention:** `hyperpaxd` executable plus semantic runtime version.
 
 | Release | Status | What Changed |
 |---------|--------|-------------|
-| **Hyperpax-OS Cronos** | Active | Production binary — CometBFT v0.37.4, x/paxoracle keeper, stateful precompile framework, Docker-based node deployment via hpx CLI |
+| **hyperpaxd_2.0.3** | Active | Production binary from `hyperpaxeer-os` with CronosRelease precompiles, CometBFT v0.38.15, x/paxoracle keeper, and the stateful precompile framework |
 
-Future release names: Atlas, Helios, Prometheus, Hyperion, Oceanus.
-
-**Format:** `Hyperpax-OS Cronos` or `Cronos Release`
-**In config:** `binary_version: cronos`
-**Binary executable:** `evmosd`
+**Format:** `hyperpaxd_<version>`
+**In config:** `binary_version: 2.0.3`
+**Binary executable:** `hyperpaxd`
 
 ---
 
@@ -103,9 +100,9 @@ Future release names: Atlas, Helios, Prometheus, Hyperion, Oceanus.
 | **Network** | Paxeer Network | Permanent identity |
 | **Fork** | Alexandria | Ancient seats of knowledge |
 | **Version** | HyperPaxeer | Hyper + compound noun |
-| **Binary** | Hyperpax-OS Cronos | Hyperpax-OS + Greek Titan |
+| **Binary** | `hyperpaxd_2.0.3` | hyperpaxd + runtime version |
 
-**Status badge:** `Alexandria / HyperPaxeer / Cronos`
+**Status badge:** `Alexandria / HyperPaxeer / hyperpaxd_2.0.3`
 
 ---
 

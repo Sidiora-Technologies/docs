@@ -1,12 +1,12 @@
 ---
-title: "Sidiora DEX"
+title: "HyperPax DEX"
 description: "Adaptive Sigmoid Automated Market Maker (v5-ASAMM) with progressive fees, on-chain order book, and Diamond Standard upgradeability"
 icon: "arrow-right-arrow-left"
 ---
 
 ## Overview
 
-Sidiora DEX is powered by the **v5-ASAMM protocol** — an Adaptive Sigmoid Automated Market Maker built from scratch for HyperPaxeer. The sigmoid bonding curve delivers near-zero slippage for small trades while progressively penalising large (whale) trades through quadratic fee scaling. Every line of Solidity is custom — zero external dependencies.
+HyperPax DEX is powered by the **v5-ASAMM protocol** — an Adaptive Sigmoid Automated Market Maker built from scratch for HyperPaxeer. The sigmoid bonding curve delivers near-zero slippage for small trades while progressively penalising large (whale) trades through quadratic fee scaling. Every line of Solidity is custom — zero external dependencies.
 
 <CardGroup cols={3}>
   <Card title="Sigmoid Curve" icon="wave-square">
@@ -40,7 +40,7 @@ P(x) = P_mid * (1 + k * tanh(alpha * x / L))
 
 **Behaviour**: Small trades see linear, minimal slippage. Medium trades transition smoothly. Large trades saturate the `tanh` ceiling **and** face quadratic fees on top.
 
-On-chain, `tanh` is approximated with a rational Pade approximant in Q128.128 fixed-point arithmetic (<0.0001% error for |x| < 4).
+On-chain, `tanh` is approximated with a rational Pade approximant in Q128.128 fixed-point arithmetic, with less than `0.0001%` error for `|x| < 4`.
 
 ---
 
@@ -167,12 +167,13 @@ npm run test:forge
 
 ---
 
-## Sidiora Product Suite
+## Protocol Suite
 
-Sidiora DEX is the core AMM. The broader Sidiora product family includes:
+HyperPax DEX is the core AMM. The broader network-operated protocol suite includes:
 
-- **Sidiora Swap** — Token swap interface powered by the v5-ASAMM Router
-- **Sidiora Futures** — Perpetual futures trading (separate contract suite)
+- **HyperPax Perps** — Perpetual futures trading
+- **Sidiora.fun** — Launchpad AMM
+- **Sidiora.ag** — Meta-aggregator routing layer
 
 Access the live exchange at [sidiora.hyperpaxeer.com](https://sidiora.hyperpaxeer.com).
 
@@ -191,9 +192,9 @@ Access the live exchange at [sidiora.hyperpaxeer.com](https://sidiora.hyperpaxee
   <Card
     title="Block Explorer"
     icon="magnifying-glass"
-    href="https://paxscan.paxeer.app"
+    href="https://paxscan.io"
   >
-    View deployed contracts on PaxeerScan
+    View deployed contracts on PaxScan
   </Card>
   <Card
     title="Sidiora Exchange"

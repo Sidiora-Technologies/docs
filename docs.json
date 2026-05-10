@@ -53,8 +53,10 @@
         "pages": [
           "index",
           "quickstart",
+          "current-network",
           "configuration",
           "network-status",
+          "performance",
           "versioning",
           "develop/mainnet"
         ]
@@ -67,6 +69,7 @@
           "develop/smart-contracts/index",
           "develop/smart-contracts/custom-improvement-proposals",
           "develop/smart-contracts/list-evm-extensions",
+          "paxspot/precompiles",
           "develop/smart-contracts/evm-extensions/evm-extensions",
           "develop/smart-contracts/evm-extensions/authorization",
           "develop/smart-contracts/evm-extensions/staking",
@@ -74,7 +77,10 @@
           "develop/smart-contracts/evm-extensions/ibc-transfer",
           "develop/smart-contracts/evm-extensions/vesting",
           "rpc",
-          "openapi",
+          "openapi/index",
+          "openapi/launchpad-graphql",
+          "openapi/perpetual-graphql",
+          "openapi/stableswap-graphql",
           "develop/api/index",
           "develop/api/networks",
           "develop/api/tendermint-rpc",
@@ -117,6 +123,7 @@
           "protocol/modules/evm",
           "protocol/modules/erc20",
           "protocol/modules/inflation",
+          "protocol/modules/paxoracle",
           "protocol/modules/vesting",
           "protocol/modules/epochs",
           "protocol/modules/feemarket"
@@ -195,14 +202,29 @@
       {
         "group": "Exchange & Trading",
         "pages": [
-          "paxspot",
-          "sidiora-dex"
+          {
+            "group": "PaxSpot",
+            "pages": [
+              "paxspot",
+              "paxspot/precompiles"
+            ]
+          },
+          {
+            "group": "Protocol Suite",
+            "pages": [
+              "sidiora/dex",
+              "sidiora/perps",
+              "sidiora/fun",
+              "sidiora/ag"
+            ]
+          }
         ]
       },
       {
         "group": "Ecosystem",
         "pages": [
-          "ctm"
+          "ctm",
+          "archive/paxdex"
         ]
       }
     ]
@@ -222,7 +244,7 @@
     }
   },
   "api": {
-    "openapi": "/openapi.yaml",
+    "openapi": "openapi.yaml",
     "playground": {
       "display": "interactive"
     }

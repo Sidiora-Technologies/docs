@@ -14,11 +14,11 @@ Configure HyperPaxeer in your applications using wagmi, viem, ethers.js, or web3
 |-----------|-------|
 | Chain ID | `125` |
 | Network Name | HyperPaxeer |
-| Native Currency | PAX (Paxeer) |
+| Native Currency | HPX (HyperPaxeer) |
 | Decimals | 18 |
 | RPC Endpoint | `https://public-rpc.paxeer.app/rpc` |
-| Block Explorer | `https://paxscan.paxeer.app` |
-| Explorer API | `https://paxscan.paxeer.app/api` |
+| Block Explorer | `https://paxscan.io` |
+| Explorer API | `https://paxscan.io/api` |
 
 ## Configuration by Library
 
@@ -38,8 +38,8 @@ Configure HyperPaxeer in your applications using wagmi, viem, ethers.js, or web3
       network: 'paxeer',
       nativeCurrency: {
         decimals: 18,
-        name: 'Paxeer',
-        symbol: 'PAX',
+        name: 'HyperPaxeer',
+        symbol: 'HPX',
       },
       rpcUrls: {
         default: {
@@ -51,9 +51,9 @@ Configure HyperPaxeer in your applications using wagmi, viem, ethers.js, or web3
       },
       blockExplorers: {
         default: {
-          name: 'PaxeerScan',
-          url: 'https://paxscan.paxeer.app',
-          apiUrl: 'https://paxscan.paxeer.app/api',
+          name: 'PaxScan',
+          url: 'https://paxscan.io',
+          apiUrl: 'https://paxscan.io/api',
         },
       },
     })
@@ -105,8 +105,8 @@ Configure HyperPaxeer in your applications using wagmi, viem, ethers.js, or web3
       network: 'paxeer',
       nativeCurrency: {
         decimals: 18,
-        name: 'Paxeer',
-        symbol: 'PAX',
+        name: 'HyperPaxeer',
+        symbol: 'HPX',
       },
       rpcUrls: {
         default: {
@@ -115,8 +115,8 @@ Configure HyperPaxeer in your applications using wagmi, viem, ethers.js, or web3
       },
       blockExplorers: {
         default: {
-          name: 'PaxeerScan',
-          url: 'https://paxscan.paxeer.app',
+          name: 'PaxScan',
+          url: 'https://paxscan.io',
         },
       },
     })
@@ -187,7 +187,7 @@ Configure HyperPaxeer in your applications using wagmi, viem, ethers.js, or web3
 
     // Get balance
     const balance = await provider.getBalance('0x...')
-    console.log('Balance:', ethers.formatEther(balance), 'PAX')
+    console.log('Balance:', ethers.formatEther(balance), 'HPX')
 
     // Get signer from MetaMask
     const signer = await provider.getSigner()
@@ -242,7 +242,7 @@ Configure HyperPaxeer in your applications using wagmi, viem, ethers.js, or web3
 
     // Get balance
     const balance = await web3.eth.getBalance(address)
-    console.log('Balance:', web3.utils.fromWei(balance, 'ether'), 'PAX')
+    console.log('Balance:', web3.utils.fromWei(balance, 'ether'), 'HPX')
 
     // Send transaction
     const receipt = await web3.eth.sendTransaction({
@@ -278,12 +278,12 @@ async function addPaxeerNetwork() {
           chainId: '0xe5', // 125 in hex
           chainName: 'HyperPaxeer',
           nativeCurrency: {
-            name: 'Paxeer',
-            symbol: 'PAX',
+            name: 'HyperPaxeer',
+            symbol: 'HPX',
             decimals: 18,
           },
           rpcUrls: ['https://public-rpc.paxeer.app/rpc'],
-          blockExplorerUrls: ['https://paxscan.paxeer.app'],
+          blockExplorerUrls: ['https://paxscan.io'],
         },
       ],
     });
@@ -302,7 +302,7 @@ Store your configuration in environment variables:
 # HyperPaxeer Configuration
 PAXEER_RPC_URL=https://public-rpc.paxeer.app/rpc
 PAXEER_CHAIN_ID=125
-PAXEER_EXPLORER=https://paxscan.paxeer.app
+PAXEER_EXPLORER=https://paxscan.io
 
 # Your private key (NEVER commit this!)
 PRIVATE_KEY=your_private_key_here
@@ -336,8 +336,8 @@ module.exports = {
         network: "paxeer",
         chainId: 125,
         urls: {
-          apiURL: "https://paxscan.paxeer.app/api",
-          browserURL: "https://paxscan.paxeer.app",
+          apiURL: "https://paxscan.io/api",
+          browserURL: "https://paxscan.io",
         },
       },
     ],
@@ -358,7 +358,7 @@ solc_version = "0.8.20"
 paxeer = "https://public-rpc.paxeer.app/rpc"
 
 [etherscan]
-paxeer = { key = "${ETHERSCAN_API_KEY}", url = "https://paxscan.paxeer.app/api" }
+paxeer = { key = "${ETHERSCAN_API_KEY}", url = "https://paxscan.io/api" }
 ```
 
 ## Testing Connection
@@ -446,4 +446,3 @@ else:
     Explore all available RPC methods
   </Card>
 </CardGroup>
-

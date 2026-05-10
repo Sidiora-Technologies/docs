@@ -173,12 +173,12 @@ The CLI assigns ports automatically. Multiple nodes on one server get auto-incre
 
 ## Create a Validator
 
-After your node syncs to the latest block, create a validator using the `evmosd` binary inside the container:
+After your node syncs to the latest block, create a validator using the `hyperpaxd` binary inside the container:
 
 ```bash
-evmosd tx staking create-validator \
+hyperpaxd tx staking create-validator \
   --amount=1000000ahpx \
-  --pubkey=$(evmosd tendermint show-validator) \
+  --pubkey=$(hyperpaxd tendermint show-validator) \
   --moniker="your-moniker" \
   --chain-id=hyperpax_125-1 \
   --commission-rate="0.05" \
@@ -201,7 +201,7 @@ Ensure your server timezone is **UTC**. A different timezone can cause `LastResu
 If your validator is jailed for downtime (missing 500 of the last 10,000 blocks):
 
 ```bash
-evmosd tx slashing unjail \
+hyperpaxd tx slashing unjail \
   --from=<key_name> \
   --chain-id=hyperpax_125-1
 ```
@@ -211,7 +211,7 @@ evmosd tx slashing unjail \
 ## Confirm Validator Status
 
 ```bash
-evmosd query tendermint-validator-set | grep "$(evmosd tendermint show-address)"
+hyperpaxd query tendermint-validator-set | grep "$(hyperpaxd tendermint show-address)"
 ```
 
 Or check the [Network Status](/network-status) page for the current validator set.

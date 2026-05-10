@@ -27,7 +27,7 @@ HyperPaxeer is a sovereign Proof-of-Stake blockchain running on the **Alexandria
 │  │  JSON-RPC / gRPC / REST   │    │  .avm bytecode execution   │  │
 │  └──────────────────────────┘    └────────────────────────────┘  │
 │                                                                  │
-│  CometBFT v0.37.4  ·  Cosmos SDK  ·  IBC  ·  x/paxoracle       │
+│  CometBFT v0.38.15 ·  Cosmos SDK  ·  IBC  ·  x/paxoracle       │
 └──────────────────────────────────────────────────────────────────┘
 ```
 
@@ -41,10 +41,10 @@ HyperPaxeer is a sovereign Proof-of-Stake blockchain running on the **Alexandria
 
 | Property | Value |
 |----------|-------|
-| **Engine** | CometBFT v0.37.4 (Tendermint-based BFT) |
+| **Engine** | CometBFT v0.38.15 (Tendermint-based BFT) |
 | **Consensus** | Proof-of-Stake with instant finality |
-| **Block time** | ~200 ms median (measured), ~2 s target |
-| **Validators** | 7 active (US-East, EU-East, UK-East) |
+| **Block time** | 277 ms average, 341 ms p95 |
+| **Validators** | 10 active with 5.9%-13.1% voting-power range |
 | **Finality** | Single-block (no reorgs under 2/3 honest assumption) |
 
 CometBFT's `PrepareProposal` and `ProcessProposal` hooks allow validators to enforce fair transaction ordering at the consensus level — providing MEV protection without external infrastructure.
@@ -166,4 +166,3 @@ The `hpx` CLI and `validate/upgrades/` docs cover automated and manual upgrade p
     Spot exchange leveraging all four precompiles
   </Card>
 </CardGroup>
-
